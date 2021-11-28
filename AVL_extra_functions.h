@@ -51,79 +51,114 @@ AVL_Tree<KEY,VAL> ArrayToTree(DynamicArray<Pair<KEY,VAL>>& array,int start_index
 
 template <typename KEY,typename VAL>
 AVL_Tree<KEY,VAL> ListToTree(List<Pair<KEY,VAL>>& list){
-
     DynamicArray<Pair<KEY,VAL>> array = listToArray(list);
     return ArrayToTree(array);
 }
 
 template <typename KEY,typename VAL>
 List<Pair<KEY,VAL>> TreeToList(AVL_Tree<KEY,VAL>& tree){
-    
+    Node_ptr<KEY,VAL> leftest =tree.select(1);
+    int tree_size=root->getRank();
+    int index=0;
+    DynamicArray<Pair<KEY,VAL>> arr(tree_size);
+    reverseClimbTreeFromLeft(leftest,true,true,true,&index,arr,tree_size);    
+    return List<Pair<KEY,VAL>>(arr);
 }
-/*
-* ittarateOrder_intoList:
-*   iterates over the tree from the root given by the order given and activates function 'f' on each vertex while doing so.
-*   reverse- if set to true, the iteration is done backwards
-*   
-*/
-template <typename KEY,typename VAL>
-void inOrder_intoList(Node_ptr<KEY,VAL> root,Order order, void(*f)(Node_ptr<KEY,VAL>&),int n,bool reverse = false){
-    if (root==nullptr){
-        return;
-    }
-    if (isLeaf(root)){
-        (*f)(root);
-        return;
-    }
-    if (!reverse){
-        if (order==IN){
-            itterateOrder(root->getLeft(),IN,f);
-            (*f)(root);
-            itterateOrder(root->getRight(),IN,f);
-        }
-        if (order==POST){
-            itterateOrder(root->getLeft(),POST,f);
-            itterateOrder(root->getRight(),POST,f);
-            (*f)(root);
-        }
-        if (order==PRE){
-            (*f)(root);
-            itterateOrder(root->getLeft(),PRE,f);
-            itterateOrder(root->getRight(),PRE,f);
-        }
-    }
-    else{
-        if (order==IN){
-            itterateOrder(root->getLeft(),IN,f,true);
-            (*f)(root);
-            itterateOrder(root->getRight(),IN,f,true);
-        }
-        if (order==POST){
-            itterateOrder(root->getLeft(),POST,f,true);
-            itterateOrder(root->getRight(),POST,f,true);
-            (*f)(root);
-        }
-        if (order==PRE){
-            (*f)(root);
-            itterateOrder(root->getLeft(),PRE,f,true);
-            itterateOrder(root->getRight(),PRE,f,true);
-        }
-    }
-}
-/**
- * non-recursive solution
- * O(logk + num)
- * */
-template <typename KEY,typename VAL>
-DynamicArray<Pair<KEY,VAL>> inOrder_into_array(Node_ptr<KEY,VAL> root,int num, bool reversed = false){
-    DynamicArray<Pair<KEY,VAL>> res_array(num);
-    DynamicArray<AVL_NODE<KEY,VAL>> node_stack(root->getHeight());
-    Node_ptr itt=root;
-    while(itt->getLeft()!=nullptr){
-        node_stack.push(*itt);
-    }
-      
 
-        
+template <typename KEY,typename VAL>
+void reverseClimbTreeFromLeft(std::shared_ptr<AVL_NODE<KEY,VAL>> current,bool goUp,bool goLeft,bool goRight,int *index,DynamicArray<Pair<KEY,VAL>>& arr , int m){
+    if (!current|| *index >= m)
+    {
+        return;
+    }
+    // go left 
+    if (current->getLeft() && goLeft)
+    {
+        reverseClimbTreeFromLeft(current->getLeft(), false, true, true, index, arr, m);
+    }
+
+    if (*index >= m)
+    {
+        return;
+    }
+
+    // save this node
+    arr[*index] = Pair(current->getKey(),current->getValue());
+    *index += 1;
+
+    // go right 
+    if (current->getRight() && goRight)
+    {
+        reverseClimbTreeFromLeft(current->getRight(), false, true, true, index, arr, m);
+    }
+
+    // go up
+    if (current->getParent() && goUp)
+    {
+        // decide if this is the right or left child so we don't return here
+        if (current->getKey() > current->getParent()->getKey())
+        {
+            reverseClimbTreeFromRight(current->getParent(), true, true, false, index, arr, m);
+        }
+        else
+        {
+            reverseClimbTreeFromRight(current->getParent(), true, false, true, index, arr, m);
+        }
+    }
+
 }
+
+template <typename KEY,typename VAL>
+void reverseClimbTreeFromRight(std::shared_ptr<AVL_NODE<KEY,VAL>> current,bool goUp,bool goLeft,bool goRight,int *index, DynamicArray<Pair<KEY,VAL>>& arr, int m){
+
+    if (!current|| *index >= m)
+    {
+        return;
+    }
+    // go right
+    if (current->getRight() && goRight)
+    {
+        reverseClimbTreeFromRight(current->getRight(), false, true, true, index, arr, m);
+    }
+
+    if (*index >= m)
+    {
+        return;
+    }
+
+    // save this node
+    arr[*index] = Pair(current->getKey(),current->getValue());
+    *index += 1;
+
+    // go left
+    if (current->getLeft() && goLeft)
+    {
+        reverseClimbTreeFromRight(current->getLeft(), false, true, true, index, arr, m);
+    }
+
+    // go up
+    if (current->getParent() && goUp)
+    {
+        // decide if this is the right or left child so we don't return here
+        if (current->getKey() > current->getParent()->getKey())
+        {
+            reverseClimbTreeFromRight(current->getParent(), true, true, false, index, arr, m);
+        }
+        else
+        {
+            reverseClimbTreeFromRight(current->getParent(), true, false, true, index, arr, m);
+        }
+    }
+}
+
+template <typename KEY,typename VAL>
+AVL_Tree<KEY,VAL> merge_trees(AVL_Tree<KEY,VAL> tree1,AVL_Tree<KEY,VAL> tree2){
+    List<Pair<KEY,VAL>> list1 = TreeToList(tree1);
+    List<Pair<KEY,VAL>> list2 = TreeToList(tree2);
+    List<Pair<KEY,VAL>> merged_list = mergeOrderedLists(list1,list2);
+    return ListToTree(merged_list);
+}
+
+
+
 #endif
