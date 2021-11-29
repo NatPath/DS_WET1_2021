@@ -42,6 +42,29 @@ class DynamicArray{
         _size=temp_size;
         _data=temp_data;
     }
+    /**
+     * 2021
+     * copy c'tor for const
+     * */
+    DynamicArray(const DynamicArray<T>& to_copy){
+        _size=to_copy.getSize();
+        T* temp_data;
+        int temp_size;
+        try{
+            temp_data=new T[_size];
+            temp_size=to_copy.getSize();
+            for (int i=0;i<temp_size;i++){
+                temp_data[i]=to_copy[i];
+            }
+        }
+        catch(std::exception& e){
+            delete[] temp_data;
+            throw std::runtime_error("Failed to copy Dynamic Array");
+        }
+        _counter=to_copy._counter;
+        _size=temp_size;
+        _data=temp_data;
+    }
 
     DynamicArray& operator=(DynamicArray<T>& to_assign){
         T* assign_data;
@@ -112,6 +135,19 @@ class DynamicArray{
     }
 
     T& operator[](int index){
+        if (index<_size){
+            return _data[index];
+        }
+        else{
+            throw std::runtime_error("Out of range index");
+        }
+    }
+    /**
+     * 2021
+     * allows const dynamicArrays
+     * 
+     * */
+    T& operator[](int index) const{
         if (index<_size){
             return _data[index];
         }

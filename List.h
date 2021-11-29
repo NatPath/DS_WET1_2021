@@ -126,7 +126,7 @@ class List{
             return;
         }
         T new_val=arr[0];
-        root=new ListNode<T>(new_val);
+        root=new ListNode<T>(std::make_shared<T>(new_val));
         ListNode<T>* new_itt=root;
         for (int i=1; i<arr.getSize(); i++){
             new_val= arr[i];            
@@ -242,9 +242,36 @@ class List{
         }
         return res;
     }
+    
+    int calcLength() const{
+        ListNode<T>* itt=root;        
+        int res=0;
+        while (itt!=nullptr){
+            res++;
+            itt=itt->getNext();
+        }
+        return res;
+    }
 
 };
 
+/** 
+ * 2021
+ * idea 2: 
+ *  use an Array of T's .
+ *  here we'll use the DynamicArray from hw2 of 2020 for ease of memory manegment.
+ * */
+template<class T>
+DynamicArray<T> listToArray(const List<T>& list){
+    int length= list.calcLength();
+    ListNode<T>* itt=list.getRoot();
+    DynamicArray<T> res(length);
+    for (int i=0; i<length; i++){
+        res[i]= *(itt->getValue());
+        itt=itt->getNext();
+    }
+    return res;
+}
 
 /**
  * 2021
@@ -259,8 +286,8 @@ class List{
  * */
 template <class T>
 List<T> mergeOrderedLists(const List<T>& list1,const List<T>& list2){
-    DynamicArray<T> array1= ListToArray(list1);
-    DynamicArray<T> array2= ListToArray(list2);
+    DynamicArray<T> array1= listToArray(list1);
+    DynamicArray<T> array2= listToArray(list2);
 
     int length1=list1.calcLength();
     int length2=list2.calcLength();
@@ -272,11 +299,12 @@ List<T> mergeOrderedLists(const List<T>& list1,const List<T>& list2){
     //make a combined ordered array
     DynamicArray<T> combined_array(combined_length);
     for (int i=0 ; i<combined_length; i++){
+
         if (i1>=length1){
             combined_array[i]=array2[i2];
             i2++;
         }
-        if (i2>=length2){
+        else if (i2>=length2){
             combined_array[i]=array1[i1];
             i1++;
         }
@@ -297,21 +325,5 @@ List<T> mergeOrderedLists(const List<T>& list1,const List<T>& list2){
     return combined_list;
 }
 
-/**
- * idea 2: 
- *  use an Array of T's .
- *  here we'll use the DynamicArray from hw2 of 2020 for ease of memory manegment.
- * */
-template<class T>
-DynamicArray<T> listToArray(const List<T>& list){
-    int length= list.calcLength();
-    ListNode<T>* itt=list.getRoot();
-    DynamicArray<T> res(length);
-    for (int i=0; i<length; i++){
-        res[i]= *(itt->getValue());
-        itt=itt->getNext();
-    }
-    return res;
-}
 
 #endif
