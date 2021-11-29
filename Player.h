@@ -10,11 +10,22 @@
 
 class Player
 {
-    int PlayerID;
-    int GroupID;
-    int Level;
-    PlayerSeat* Seat;
+    int playerID;
+    int groupID;
+    int level;
+    PlayerSeat *Seat;
 
+public:
+    /***********************************************************
+         * Player: constructor for Player
+         * 
+         * @param playerID the player's ID
+         * @param groupID the player's Group ID
+         * @param level the player's level
+         ***********************************************************/
+    Player(int playerID, int groupID, int level) : playerID(playerID), groupID(groupID), level(level) {}
+
+    
 };
 
 #endif

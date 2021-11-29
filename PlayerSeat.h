@@ -12,6 +12,10 @@ class PlayerSeat
 {
     Player* Player_on_seat;
 
+public:
+
+    PlayerSeat(Player* Player_on_seat) : Player_on_seat(Player_on_seat){}
+
 
 };
 
