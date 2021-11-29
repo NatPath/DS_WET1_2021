@@ -86,7 +86,7 @@ AVL_Tree<KEY,VAL> ListToTree(List<Pair<KEY,VAL>>& list){
 template <typename KEY,typename VAL>
 List<Pair<KEY,VAL>> TreeToList(AVL_Tree<KEY,VAL>& tree){
     Node_ptr<KEY,VAL> leftest =tree.select(1);
-    int tree_size=(tree->getRoot())->getRank();
+    int tree_size=(tree.getRoot())->getRank();
     int index=0;
     DynamicArray<Pair<KEY,VAL>> arr(tree_size);
     reverseClimbTreeFromLeft(leftest,true,true,true,&index,arr,tree_size);    
@@ -126,11 +126,11 @@ void reverseClimbTreeFromLeft(std::shared_ptr<AVL_NODE<KEY,VAL>> current,bool go
         // decide if this is the right or left child so we don't return here
         if (current->getKey() > current->getParent()->getKey())
         {
-            reverseClimbTreeFromRight(current->getParent(), true, true, false, index, arr, m);
+            reverseClimbTreeFromLeft(current->getParent(), true, true, false, index, arr, m);
         }
         else
         {
-            reverseClimbTreeFromRight(current->getParent(), true, false, true, index, arr, m);
+            reverseClimbTreeFromLeft(current->getParent(), true, false, true, index, arr, m);
         }
     }
 
@@ -178,12 +178,20 @@ void reverseClimbTreeFromRight(std::shared_ptr<AVL_NODE<KEY,VAL>> current,bool g
         }
     }
 }
-
+/**
+ * merge tree1 and tree2 into one big tree.
+ * both of the input trees are valid after the merge.
+ * NOTE:(complex object behaivor should be checked)
+ * O(n1+n2)
+ * 
+ * */
 template <typename KEY,typename VAL>
-AVL_Tree<KEY,VAL> merge_trees(AVL_Tree<KEY,VAL> tree1,AVL_Tree<KEY,VAL> tree2){
+AVL_Tree<KEY,VAL> merge_trees(AVL_Tree<KEY,VAL>& tree1,AVL_Tree<KEY,VAL>& tree2){
     List<Pair<KEY,VAL>> list1 = TreeToList(tree1);
     List<Pair<KEY,VAL>> list2 = TreeToList(tree2);
+
     List<Pair<KEY,VAL>> merged_list = mergeOrderedLists(list1,list2);
+
     return ListToTree(merged_list);
 }
 

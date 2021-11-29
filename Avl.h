@@ -260,6 +260,7 @@ class AVL_Tree{
      * might be a bad idea.. use only if you know what you're doing.
      * */
     void setRoot(Node_ptr new_root){
+        root.reset();
         root=new_root;
     }
     /**

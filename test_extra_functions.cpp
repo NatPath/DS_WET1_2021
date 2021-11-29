@@ -64,12 +64,43 @@ void checkArrayToTree(){
     tree.printTree();
 
 }
+void checkTreeToList(){
+    DynamicArray<Pair<int,int>> arr(SIZE);
+    for (int i=0 ;i<SIZE;i++){
+        arr[i] = Pair<int,int>(i,i);
+    }
+    AVL_Tree<int,int> tree = ArrayToTree<int,int>(arr);
+
+    List<Pair<int,int>> l=TreeToList(tree);
+    print("printing List:");
+    l.printList();
+}
+void checkMergeTrees(){
+    DynamicArray<Pair<int,int>> arr1(SIZE);
+    for (int i=0 ;i<SIZE;i++){
+        arr1[i] = Pair<int,int>(i,i);
+    }
+    AVL_Tree<int,int> tree1 = ArrayToTree<int,int>(arr1);
+
+    DynamicArray<Pair<int,int>> arr2(SIZE);
+    for (int i=0 ;i<SIZE;i++){
+        arr2[i] = Pair<int,int>(i+SIZE,i+SIZE);
+    }
+    AVL_Tree<int,int> tree2 = ArrayToTree<int,int>(arr2);
+    AVL_Tree<int,int> tree=merge_trees(tree1,tree2);
+    tree.printTree();
+    List<Pair<int,int>> l=TreeToList(tree);
+    print("printing list:");
+    l.printList();
+}
 int main(){
     //basicListCheck();
     //dynamicArrayToListCheck();
     //checkReturnAList();
     //checkMergeLists();
-    checkArrayToTree();
+    //checkArrayToTree();
+    //checkTreeToList();
+    checkMergeTrees();
 
     return 0;
 }
