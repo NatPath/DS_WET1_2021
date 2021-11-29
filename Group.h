@@ -33,6 +33,9 @@ public:
     //gets the size of the group
     int getSize() const;
 
+    /**
+     * insert player into group
+     * */
     void insertPlayer(Player* player_p);
 
 };
