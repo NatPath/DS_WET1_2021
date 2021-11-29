@@ -19,12 +19,38 @@ using Node_ptr=std::shared_ptr<AVL_NODE<KEY,VAL>>;
 template <typename KEY,typename VAL>
 AVL_Tree<KEY,VAL> ArrayToTree(DynamicArray<Pair<KEY,VAL>>& array){
     int size = array.getSize();
-    return ArrayToTree(array,0,size-1);
+    AVL_Tree<KEY,VAL> tree;
+    Node_ptr<KEY,VAL> root = ArrayToTree(array,0,size-1);
+    tree.setRoot(root);
+    return tree;
 }
 
 /**
  * gets an array. make an avl tree of the element between start_index and end_index.
  * */
+template <typename KEY,typename VAL>
+Node_ptr<KEY,VAL> ArrayToTree(DynamicArray<Pair<KEY,VAL>>& array,int start_index,int end_index){
+
+    if(start_index>end_index){
+        return nullptr;
+    }
+
+    int size = end_index-start_index+1;
+    int mid= start_index+size/2;
+    Node_ptr<KEY,VAL> tree=std::make_shared<AVL_NODE<KEY,VAL>>(array[mid].getKey(),array[mid].getValue());
+    if (start_index==end_index){
+        return tree;
+    }
+    Node_ptr<KEY,VAL> left_tree = ArrayToTree(array,start_index,mid-1);
+    Node_ptr<KEY,VAL> right_tree = ArrayToTree(array,mid+1,end_index);
+    connectNodes(tree,left_tree,L);
+    connectNodes(tree,right_tree,R);
+    tree->updateHeight();
+    tree->updateRank();
+    return tree;
+}
+
+/* Trying a different approach, return Node_ptr instead of AVL_Tree
 template <typename KEY,typename VAL>
 AVL_Tree<KEY,VAL> ArrayToTree(DynamicArray<Pair<KEY,VAL>>& array,int start_index,int end_index){
 
@@ -34,20 +60,22 @@ AVL_Tree<KEY,VAL> ArrayToTree(DynamicArray<Pair<KEY,VAL>>& array,int start_index
 
     int size = end_index-start_index+1;
     int mid= start_index+size/2;
-    AVL_Tree<KEY,VAL> tree();
+    AVL_Tree<KEY,VAL> tree;
     tree.insertNode(array[mid].getKey(),array[mid].getValue());
     if (start_index==end_index){
         return tree;
     }
     AVL_Tree<KEY,VAL> left_tree = ArrayToTree(array,start_index,mid-1);
     AVL_Tree<KEY,VAL> right_tree = ArrayToTree(array,mid+1,end_index);
-    connectNodes(tree.getRoot(),left_tree->getRoot(),L);
-    connectNodes(tree.getRoot(),right_tree->getRoot(),R);
-    tree.root->updateHeight();
-    tree.root->updateRank();
+    connectNodes(tree.getRoot(),left_tree.getRoot(),L);
+    connectNodes(tree.getRoot(),right_tree.getRoot(),R);
+    tree.getRoot()->updateHeight();
+    tree.getRoot()->updateRank();
+    left_tree.setRoot(nullptr);
+    right_tree.setRoot(nullptr);
     return tree;
-    
 }
+*/
 
 template <typename KEY,typename VAL>
 AVL_Tree<KEY,VAL> ListToTree(List<Pair<KEY,VAL>>& list){

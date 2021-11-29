@@ -55,11 +55,21 @@ void checkMergeLists(){
     List<int> l_merged=mergeOrderedLists(l1,l2);
     l_merged.printList();
 }
+void checkArrayToTree(){
+    DynamicArray<Pair<int,int>> arr(SIZE);
+    for (int i=0 ;i<SIZE;i++){
+        arr[i] = Pair<int,int>(i,i);
+    }
+    AVL_Tree<int,int> tree = ArrayToTree<int,int>(arr);
+    tree.printTree();
+
+}
 int main(){
     //basicListCheck();
     //dynamicArrayToListCheck();
     //checkReturnAList();
     //checkMergeLists();
+    checkArrayToTree();
 
     return 0;
 }

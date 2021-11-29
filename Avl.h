@@ -255,6 +255,31 @@ class AVL_Tree{
     AVL_Tree():root(nullptr){}
     //AVL_Tree(Node_ptr root):root(root){} // **2021** this one might not work, 
     ~AVL_Tree();
+    /**
+     * 2021
+     * might be a bad idea.. use only if you know what you're doing.
+     * */
+    void setRoot(Node_ptr new_root){
+        root=new_root;
+    }
+    /**
+     * 2021
+     * copy c'tor
+     * just copies the root. no deep copy or anything
+     * */
+    AVL_Tree(const AVL_Tree& to_copy){
+        root=to_copy.getRoot();
+    }
+    /**
+     * 2021
+     * assignment operator
+     * just assign the root
+     * */
+    AVL_Tree& operator=(AVL_Tree<KEY,VAL>& to_assign ){
+        root=to_assign.getRoot();
+        return *this;
+    }
+
     Node_ptr getRoot() const{return root;}
 
     VAL getRootValue() const{
