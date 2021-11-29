@@ -11,9 +11,9 @@
 class Player
 {
     int playerID;
-    int groupID;
     int level;
-    PlayerSeat *Seat;
+    int groupID;
+    Group* group;
 
 public:
     /***********************************************************
@@ -24,6 +24,14 @@ public:
          * @param level the player's level
          ***********************************************************/
     Player(int playerID, int groupID, int level) : playerID(playerID), groupID(groupID), level(level) {}
+
+    // todo: operators
+
+    void setGroup(Group* group_p);
+    void increaseLevel(int increase_by);
+
+
+
 
     
 };

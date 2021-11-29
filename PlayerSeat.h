@@ -10,11 +10,18 @@
 
 class PlayerSeat
 {
-    Player* Player_on_seat;
+    Player* player_on_seat;
 
 public:
 
-    PlayerSeat(Player* Player_on_seat) : Player_on_seat(Player_on_seat){}
+    PlayerSeat(Player* player_on_seat) : player_on_seat(player_on_seat){}
+    /**
+     * TODO:
+     * 1)define operators <,>,<=,>=,==,!= (can look at Pair.h or Course.h in 2020 for reference)
+     * 2)
+     * 3)
+     * */
+
 
 
 };

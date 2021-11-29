@@ -20,7 +20,7 @@ StatusType AddGroup(void *DS, int GroupID)
 
 StatusType AddPlayer(void *DS, int PlayerID, int GroupID, int Level)
 {
-    if (DS == nullptr || GroupID <= 0 || PlayerID <= 0 || Level < 0)
+    if (DS == NULL || GroupID <= 0 || PlayerID <= 0 || Level < 0)
     {
         return INVALID_INPUT;
     }
