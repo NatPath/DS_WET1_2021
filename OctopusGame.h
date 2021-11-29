@@ -15,6 +15,17 @@ class OctopusGame
     AVL_Tree<int, Group> GroupTree;
     AVL_Tree<int, Group*> NonEmptyGroupsTree;
     Player *GlobalBestPlayer;
+
+    // help functions
+
+    /**
+     * Does all what in means to add a player to a group.
+     * including:
+     * 1) checking if the group was empty before 
+     * 2) let the player know his group
+     * 3) let group know about its player 
+     * */
+    void addPlayerToGroup(Player* player, Group* group);
 public:
     OctopusGame() = default;
 
@@ -35,15 +46,5 @@ public:
 
     StatusType GetGroupsHighestLevel(int numOfGroups, int **Players);
 };
-// help functions
-/**
- * Does all what in means to add a player to a group.
- * including:
- * 1) checking if the group was empty before 
- * 2) let the player know his group
- * 3) let group know about its player 
- * 
- * */
-void addPlayerToGroup(Player* player, Group* group);
 
 #endif
