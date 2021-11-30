@@ -15,6 +15,7 @@ class PlayerSeat
 public:
 
     PlayerSeat(Player* player_on_seat) : player_on_seat(player_on_seat){}
+    Player* getPlayerOnSeat();
     /**
      * TODO:
      * 1)define operators <,>,<=,>=,==,!= (can look at Pair.h or Course.h in 2020 for reference)
@@ -25,5 +26,6 @@ public:
 
 
 };
+void updatePlayerSeatAboutGroup(Node_ptr<PlayerSeat,PlayerSeat> player_seat, Group* group_p);
 
 #endif

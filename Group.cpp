@@ -3,9 +3,31 @@
 int Group::getSize() const{
     return size;
 }
+void Group::setSize(int new_size){
+    size = new_size;
+}
 void Group::insertPlayer(Player* player_p){
     PlayerSeat player_seat(player_p);
-    GroupPlayersTree.insertNode(player_seat,player_seat);
+    groupPlayersTree.insertNode(player_seat,player_seat);
     size++;
-    highest_level_player= GroupPlayersTree.select(size);
+    highest_level_player= groupPlayersTree.select(size);
+}
+Node_ptr<PlayerSeat,PlayerSeat> Group::getHighestLevelPlayer(){
+    return highest_level_player;
+}
+//O(logn)
+void Group::updateHighestLevelPlayer(){
+    highest_level_player= groupPlayersTree.select(size);
+}
+
+/**
+ * helper function for updateGroupPLayersAboutGroup.
+ * practicly inorders the tree and updates the players in the players seats.
+ * (The general inorder function of the tree does not have an extra argument for the group pointer)
+ * */
+void updateGroupPlayersAboutGroup_wrap(Node_ptr<PlayerSeat,PlayerSeat> root,Group* group_p){
+    player
+}
+void Group::updateGroupPlayersAboutGroup(){
+    
 }

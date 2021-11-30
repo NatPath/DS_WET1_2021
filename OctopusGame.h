@@ -4,6 +4,7 @@
 #include "Auxiliaries.h"
 #include "library1.h"
 #include "Avl.h"
+#include "AVL_extra_functions.h"
 #include "Group.h"
 #include "Player.h"
 
@@ -26,6 +27,7 @@ class OctopusGame
      * 3) let group know about its player 
      * */
     void addPlayerToGroup(Player* player, Group* group);
+    void updateGlobalBestPlayer();
 public:
     OctopusGame() = default;
 
@@ -45,6 +47,8 @@ public:
     StatusType GetAllPlayersByLevel(int GroupID, int **Players, int *numOfPlayers);
 
     StatusType GetGroupsHighestLevel(int numOfGroups, int **Players);
+
+    void Quit();
 };
 
 #endif

@@ -7,36 +7,39 @@
 #include "Avl.h"
 #include "Player.h"
 
-class PlayerSeat{
-    Player* player;
-    public:
-    bool operator<(const Player& player);
-};
 class Group
 {
     int group_id;
     int size;
-    AVL_Tree<PlayerSeat, PlayerSeat> GroupPlayersTree;
+    AVL_Tree<PlayerSeat, PlayerSeat> groupPlayersTree;
     Node_ptr<PlayerSeat,PlayerSeat> highest_level_player;
 
 public:
-    Group(int groupID) : group_id(groupID){};
+    Group(int groupID) : group_id(groupID),size(0),highest_level_player(nullptr){};
     ~Group();
 
     int getID() const
     {
         return group_id;
     }
-    AVL_Tree<PlayerSeat, PlayerSeat> getPlayerTree() const{
-        return GroupPlayersTree;
+    AVL_Tree<PlayerSeat, PlayerSeat>& getPlayerTree() {
+        return groupPlayersTree; // !!!!!!! Check if returning only the root is required !!!!!!!
+    }
+    void setGroupsPlayerTree(AVL_Tree<PlayerSeat,PlayerSeat>& new_tree){
+        groupPlayersTree = new_tree;
     }
     //gets the size of the group
     int getSize() const;
+    void setSize(int new_size);
+
+    Node_ptr<PlayerSeat,PlayerSeat> getHighestLevelPlayer();
+    void updateHighestLevelPlayer();
 
     /**
      * insert player into group
      * */
     void insertPlayer(Player* player_p);
+    void updateGroupPlayersAboutGroup();
 
 };
 
