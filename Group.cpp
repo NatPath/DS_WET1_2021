@@ -26,8 +26,17 @@ void Group::updateHighestLevelPlayer(){
  * (The general inorder function of the tree does not have an extra argument for the group pointer)
  * */
 void updateGroupPlayersAboutGroup_wrap(Node_ptr<PlayerSeat,PlayerSeat> root,Group* group_p){
-    player
+    if (root==nullptr){
+        return;
+    }
+    updateGroupPlayersAboutGroup_wrap(root->getLeft(),group_p);
+    (root->getValue()).getPlayerOnSeat()->setGroup(group_p);
+    updateGroupPlayersAboutGroup_wrap(root->getRight(),group_p);
+
 }
 void Group::updateGroupPlayersAboutGroup(){
+    Node_ptr<PlayerSeat,PlayerSeat> root = groupPlayersTree.getRoot();
+    updateGroupPlayersAboutGroup_wrap(root,this);
+
     
 }

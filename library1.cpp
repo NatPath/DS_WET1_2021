@@ -35,7 +35,7 @@ StatusType RemovePlayer(void *DS, int PlayerID, int GroupID, int Level)
         return INVALID_INPUT;
     }
     OctopusGame *Ogame = static_cast<OctopusGame *>(DS);
-    return (Ogame)->RemovePlayer(PlayerID, GroupID); // Needs to take care of StatusType -ALLOCATION_ERROR, Failure and Success
+    return (Ogame)->RemovePlayer(PlayerID); // Needs to take care of StatusType -ALLOCATION_ERROR, Failure and Success
 }
 
 StatusType ReplaceGroup(void *DS, int GroupID, int ReplacementID)
@@ -85,7 +85,7 @@ StatusType GetAllPlayersByLevel(void *DS, int GroupID, int **Players, int *numOf
         return INVALID_INPUT;
     }
     OctopusGame *Ogame = static_cast<OctopusGame *>(DS);
-    return (Ogame)->GetHighestLevel(GroupID, *Players, numOfPlayers);
+    return (Ogame)->GetAllPlayersByLevel(GroupID, Players, numOfPlayers);
 }
 
 StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
@@ -95,7 +95,7 @@ StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
         return INVALID_INPUT;
     }
     OctopusGame *Ogame = static_cast<OctopusGame *>(DS);
-    return (Ogame)->GetHighestLevel(numOfGroups, *Players);
+    return (Ogame)->GetGroupsHighestLevel(numOfGroups, Players);
 }
 
 void Quit(void** DS){

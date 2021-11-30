@@ -10,9 +10,10 @@ void OctopusGame::addPlayerToGroup(Player *player_p, Group *group_p)
     group_p->insertPlayer(player_p);
     player_p->setGroup(group_p);
 }
-void OctopusGame::updateGlobalBestPlayer(){
-    int num_of_players= PlayerByLevelTree.getNumNodes();
-    Node_ptr<PlayerSeat,PlayerSeat> playerseat = PlayerByLevelTree.select(num_of_players);
+void OctopusGame::updateGlobalBestPlayer()
+{
+    int num_of_players = PlayerByLevelTree.getNumNodes();
+    Node_ptr<PlayerSeat, PlayerSeat> playerseat = PlayerByLevelTree.select(num_of_players);
     GlobalBestPlayer = (playerseat->getValue()).getPlayerOnSeat();
 }
 
@@ -99,13 +100,13 @@ StatusType OctopusGame::RemovePlayer(int PlayerID)
     //if so
     //find the group key in the nonemptytree in O(logn) and remove it at O(1)
     //delete the group with the found key from the nonemptytree.
-    
+
     if (player_group_p->getSize() == 1)
     {
         NonEmptyGroupsTree.deleteNode(player_group_p->getID()); // Need to check at debugging that Add player inserts Group Pointer correctly to NonEmptyGroupsTree, may cause bugs.
     }
     player_group_p->setSize(player_group_p->getSize() - 1);
-    AVL_Tree<PlayerSeat, PlayerSeat>& player_to_remove_group_tree = player_group_p->getPlayerTree(); // need to verify assignment operator of AVL. May cause bugs.
+    AVL_Tree<PlayerSeat, PlayerSeat> &player_to_remove_group_tree = player_group_p->getPlayerTree(); // need to verify assignment operator of AVL. May cause bugs.
     player_to_remove_group_tree.deleteNode(player_to_remove_seat);
     player_group_p->updateHighestLevelPlayer();
 
@@ -115,9 +116,6 @@ StatusType OctopusGame::RemovePlayer(int PlayerID)
 
     //remove from PlayerByIdTree O(logn)
     PlayerByIDTree.deleteNode(PlayerID);
-    
-
-
 
     return StatusType::SUCCESS;
 }
@@ -137,6 +135,9 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
 
         Group *group_p_to_replace = &(group_node_to_replace->getValue());
         Group *replacement_group_p = &(replacement_group_node->getValue());
+        if (group_p_to_replace->getID() != GroupID || replacement_group_p->getID() != ReplacementID){
+            return StatusType::FAILURE;
+        }
         AVL_Tree<PlayerSeat, PlayerSeat> tree_to_replace = group_p_to_replace->getPlayerTree();
         AVL_Tree<PlayerSeat, PlayerSeat> replacement_tree = replacement_group_p->getPlayerTree();
 
@@ -182,6 +183,31 @@ StatusType OctopusGame::IncreaseLevel(int PlayerID, int LevelIncrease)
     try
     {
 
+        Node_ptr<int, Player> player_to_increase_level_node = PlayerByIDTree.findLastOfSearchPath(PlayerID);
+        if (player_to_increase_level_node == nullptr)
+        {
+            return StatusType::FAILURE;
+        }
+
+        Player *player_to_increase_level = &(player_to_increase_level_node->getValue()); //you might ask why we need all this pointer stuff.. the reason is to avoid copying stuff when not needed
+        //check for errors
+        if (player_to_increase_level->getPlayerID() != PlayerID)
+        {
+            return StatusType::FAILURE;
+        }
+
+        Group *player_group_p = player_to_increase_level->getGroupPointer();
+        AVL_Tree<PlayerSeat, PlayerSeat> &player_to_increase_level_group_tree = player_group_p->getPlayerTree(); // need to verify assignment operator of AVL. May cause bugs.
+        PlayerSeat player_to_increase_level_seat(player_to_increase_level);
+        player_to_increase_level_group_tree.deleteNode(player_to_increase_level_seat);
+        player_to_increase_level->setLevel(player_to_increase_level->getLevel() + LevelIncrease);
+        player_to_increase_level_group_tree.insertNode(player_to_increase_level_seat, player_to_increase_level_seat);
+        player_group_p->updateHighestLevelPlayer();
+        PlayerByLevelTree.deleteNode(player_to_increase_level_seat);
+        PlayerByLevelTree.insertNode(player_to_increase_level_seat, player_to_increase_level_seat);
+
+        updateGlobalBestPlayer();
+
         //remove player
 
         //insert player with the level increased
@@ -193,8 +219,23 @@ StatusType OctopusGame::IncreaseLevel(int PlayerID, int LevelIncrease)
 }
 StatusType OctopusGame::GetHighestLevel(int GroupID, int *PlayerID)
 {
+    if (GroupID<0){
+        if (GlobalBestPlayer==nullptr){//there are no players
+            *PlayerID=1;
+            return StatusType::SUCCESS;
+        }
+        *PlayerID = GlobalBestPlayer->getPlayerID();
+        return StatusType::SUCCESS;
+    }   
+    Node_ptr<int,Group> found_node = GroupTree.findLastOfSearchPath(GroupID);
+    Group& found_group = found_node->getValue();
+    if (found_group.getID() != GroupID){// the group is not in the tree
+        return StatusType::FAILURE;
+    }
+    Node_ptr<PlayerSeat,PlayerSeat> highest_player_in_group =found_group.getHighestLevelPlayer();
+    *PlayerID = highest_player_in_group->getValue().getPlayerOnSeat()->getPlayerID();
+    return StatusType::SUCCESS;
 
-    //return the fitting field in Group/PlayerByLevelTree
 }
 
 StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *numOfPlayers)

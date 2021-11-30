@@ -26,16 +26,18 @@ public:
     Player(int playerID, int groupID, int level) : playerID(playerID), groupID(groupID), level(level) {}
 
     int getPlayerID() const;
-    Group* getGroupPointer() const;
+    Group *getGroupPointer() const;
     // todo: operators
 
-    void setGroup(Group* group_p);
+    void setGroup(Group *group_p);
+    int getLevel();
+    void setLevel(int new_level);
     void increaseLevel(int increase_by);
+    //bool operator=()
 
 
 
 
-    
 };
 
 #endif
