@@ -85,6 +85,9 @@ AVL_Tree<KEY,VAL> ListToTree(List<Pair<KEY,VAL>>& list){
 
 template <typename KEY,typename VAL>
 List<Pair<KEY,VAL>> TreeToList(AVL_Tree<KEY,VAL>& tree){
+    if( tree.getRoot()==nullptr){
+        return List<Pair<KEY,VAL>>();
+    }
     Node_ptr<KEY,VAL> leftest =tree.select(1);
     int tree_size=(tree.getRoot())->getRank();
     int index=0;

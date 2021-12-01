@@ -44,12 +44,6 @@ StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
     {
         Player new_player(PlayerID, GroupID, Level);
 
-        // Adding Player to player by ID tree
-
-        if (PlayerByIDTree.insertNode(PlayerID, new_player) == false)
-        {
-            return StatusType::FAILURE;
-        }
 
         Node_ptr<int, Group> group_node = GroupTree.findLastOfSearchPath(GroupID);
         if (group_node == nullptr) // Should maybe add "group_to_add_player == nullptr"
@@ -57,13 +51,22 @@ StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
             return StatusType::FAILURE;
         }
 
+        Group *group_p = &(group_node->getValue());
+        if (group_p->getID()!=GroupID){
+            return StatusType::FAILURE;
+        }
+        // Adding Player to player by ID tree
+
+        if (PlayerByIDTree.insertNode(PlayerID, new_player) == false)
+        {
+            return StatusType::FAILURE;
+        }
         // Adding Player to player by ID tree
 
         PlayerSeat player_seat(&new_player);
         PlayerByLevelTree.insertNode(player_seat, player_seat);
         updateGlobalBestPlayer();
 
-        Group *group_p = &(group_node->getValue());
 
         // Adding Player to a group
         addPlayerToGroup(&new_player, group_p);
