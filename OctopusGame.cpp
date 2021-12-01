@@ -35,6 +35,7 @@ StatusType OctopusGame::AddGroup(int GroupID)
     {
         return StatusType::ALLOCATION_ERROR;
     }
+    return StatusType::FAILURE;
 }
 
 StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
@@ -67,12 +68,14 @@ StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
         // Adding Player to a group
         addPlayerToGroup(&new_player, group_p);
 
-        return SUCCESS;
+        return StatusType::SUCCESS;
     }
     catch (const std::bad_alloc &e)
     {
         return StatusType::ALLOCATION_ERROR;
     }
+    return StatusType::FAILURE;
+
 }
 
 StatusType OctopusGame::RemovePlayer(int PlayerID)
@@ -174,7 +177,7 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
     {
         return StatusType::ALLOCATION_ERROR;
     }
-
+    return StatusType::FAILURE;
     //
 }
 
@@ -216,6 +219,7 @@ StatusType OctopusGame::IncreaseLevel(int PlayerID, int LevelIncrease)
     {
         return StatusType::ALLOCATION_ERROR;
     }
+    return StatusType::FAILURE;
 }
 StatusType OctopusGame::GetHighestLevel(int GroupID, int *PlayerID)
 {
@@ -286,6 +290,7 @@ StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *nu
     {
         return StatusType::ALLOCATION_ERROR;
     }
+    return StatusType::FAILURE;
 }
 
 StatusType OctopusGame::GetGroupsHighestLevel(int numOfGroups, int **Players)
@@ -316,5 +321,5 @@ StatusType OctopusGame::GetGroupsHighestLevel(int numOfGroups, int **Players)
     {
         return StatusType::ALLOCATION_ERROR;
     }
+    return StatusType::FAILURE;
 }
-

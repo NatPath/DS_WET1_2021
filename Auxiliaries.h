@@ -3,6 +3,11 @@
 #include <exception>
 #include <iostream>
 
+//All the class definition needed:
+class Player;
+class PlayerSeat;
+class Group;
+
 // Auxilary functions used all over the program
 
 template<class T>

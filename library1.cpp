@@ -28,7 +28,7 @@ StatusType AddPlayer(void *DS, int PlayerID, int GroupID, int Level)
     return (Ogame)->AddPlayer(PlayerID, GroupID, Level); // Needs to take care of StatusType -ALLOCATION_ERROR, Failure and Success
 }
 
-StatusType RemovePlayer(void *DS, int PlayerID, int GroupID, int Level)
+StatusType RemovePlayer(void *DS, int PlayerID)
 {
     if (DS == nullptr || PlayerID <= 0)
     {

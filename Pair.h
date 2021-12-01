@@ -1,5 +1,6 @@
 #ifndef _PAIR_H
 #define _PAIR_H
+#include <iostream>
 
 template <typename KEY, typename VALUE>
 class Pair{
@@ -7,7 +8,7 @@ class Pair{
     VALUE value;
     
     public:
-    Pair()=default;
+    Pair(){};
     Pair(KEY key,VALUE value):key(key),value(value){};
     Pair(Pair& to_copy)=default;
     Pair(const Pair& to_copy)=default;

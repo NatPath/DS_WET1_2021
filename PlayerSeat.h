@@ -13,6 +13,7 @@ class PlayerSeat
     Player *player_on_seat;
 
 public:
+    PlayerSeat():player_on_seat(nullptr){}
     PlayerSeat(Player *player_on_seat) : player_on_seat(player_on_seat) {}
     Player *getPlayerOnSeat() const;
     /**
@@ -22,9 +23,28 @@ public:
      * 3)
      * */
 
-    friend bool operator<(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
-    friend bool operator==(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+    friend bool operator<(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+    friend bool operator<=(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+    friend bool operator>(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+    friend bool operator>=(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+    friend bool operator==(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+    friend bool operator!=(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
 };
-void updatePlayerSeatAboutGroup(Node_ptr<PlayerSeat, PlayerSeat> player_seat, Group *group_p);
 
+bool operator<(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+bool operator<=(PlayerSeat const&player_seat_1,PlayerSeat const&player_seat_2);
+bool operator>(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+bool operator>=(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+bool operator==(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+bool operator!=(PlayerSeat const&player_seat_1, PlayerSeat const&player_seat_2);
+/*
+bool operator<(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+bool operator<=(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+bool operator>(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+bool operator>=(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+bool operator==(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+bool operator!=(const PlayerSeat &player_seat_1, const PlayerSeat &player_seat_2);
+*/
+
+void updatePlayerSeatAboutGroup(Node_ptr<PlayerSeat, PlayerSeat> player_seat, Group *group_p);
 #endif

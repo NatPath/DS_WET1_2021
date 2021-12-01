@@ -16,7 +16,7 @@ class Group
 
 public:
     Group(int groupID) : group_id(groupID),size(0),highest_level_player(nullptr){};
-    ~Group();
+    ~Group()=default;
 
     int getID() const
     {
