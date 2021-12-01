@@ -13,6 +13,10 @@ void OctopusGame::addPlayerToGroup(Player *player_p, Group *group_p)
 void OctopusGame::updateGlobalBestPlayer()
 {
     int num_of_players = PlayerByLevelTree.getNumNodes();
+    if (num_of_players==0){
+        GlobalBestPlayer=nullptr;
+        return;
+    }
     Node_ptr<PlayerSeat, PlayerSeat> playerseat = PlayerByLevelTree.select(num_of_players);
     GlobalBestPlayer = (playerseat->getValue()).getPlayerOnSeat();
 }

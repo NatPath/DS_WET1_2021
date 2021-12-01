@@ -17,6 +17,10 @@ Node_ptr<PlayerSeat,PlayerSeat> Group::getHighestLevelPlayer(){
 }
 //O(logn)
 void Group::updateHighestLevelPlayer(){
+    if (size==0){
+        highest_level_player=nullptr;
+        return;
+    }
     highest_level_player= groupPlayersTree.select(size);
 }
 

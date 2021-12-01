@@ -90,6 +90,6 @@ StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
 
 void Quit(void** DS){
     delete (OctopusGame*)(*DS);
-    *DS=nullptr;
+   *DS=nullptr;
 }
 

@@ -26,7 +26,7 @@ void Player::setLevel(int new_level)
     level = new_level;
 }
 
-bool operator<(Player const&player_1, Player const& player_2)
+bool operator<(Player const &player_1, Player const &player_2)
 {
     if (player_1.level < player_2.level)
     {
@@ -39,11 +39,11 @@ bool operator<(Player const&player_1, Player const& player_2)
 
     return false;
 }
-bool operator<=(Player const&player_1, Player const& player_2)
+bool operator<=(Player const &player_1, Player const &player_2)
 {
-    return !(player_1>player_2);
+    return !(player_1 > player_2);
 }
-bool operator>(Player const&player_1, Player const& player_2)
+bool operator>(Player const &player_1, Player const &player_2)
 {
     if (player_1.level > player_2.level)
     {
@@ -56,12 +56,12 @@ bool operator>(Player const&player_1, Player const& player_2)
 
     return false;
 }
-bool operator>=(Player const&player_1, Player const& player_2)
+bool operator>=(Player const &player_1, Player const &player_2)
 {
-    return !(player_1<player_2);
+    return !(player_1 < player_2);
 }
 
-bool operator==(Player const&player_1, Player const& player_2)
+bool operator==(Player const &player_1, Player const &player_2)
 {
     if ((player_1.level == player_2.level) && (player_2.playerID == player_1.playerID))
     {
@@ -69,9 +69,9 @@ bool operator==(Player const&player_1, Player const& player_2)
     }
     return false;
 }
-bool operator!=(Player const&player_1, Player const& player_2)
+bool operator!=(Player const &player_1, Player const &player_2)
 {
-    return !(player_1==player_2);
+    return !(player_1 == player_2);
 }
 
 /*
