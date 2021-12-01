@@ -42,7 +42,7 @@ StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
 {
     try
     {
-        Player new_player(PlayerID, GroupID, Level);
+        Player new_player(PlayerID, GroupID, Level); // this is a dummy player, the real player is made when inserted to the tree
 
 
         Node_ptr<int, Group> group_node = GroupTree.findLastOfSearchPath(GroupID);
@@ -62,14 +62,17 @@ StatusType OctopusGame::AddPlayer(int PlayerID, int GroupID, int Level)
             return StatusType::FAILURE;
         }
         // Adding Player to player by ID tree
+        //first search for the actuall player we'll work with
+        Node_ptr<int,Player> actual_player_node=PlayerByIDTree.findLastOfSearchPath(PlayerID);
 
-        PlayerSeat player_seat(&new_player);
+        Player* actual_player_p = &(actual_player_node->getValue());
+        PlayerSeat player_seat(actual_player_p);
         PlayerByLevelTree.insertNode(player_seat, player_seat);
         updateGlobalBestPlayer();
 
 
         // Adding Player to a group
-        addPlayerToGroup(&new_player, group_p);
+        addPlayerToGroup(actual_player_p, group_p);
 
         return StatusType::SUCCESS;
     }
@@ -156,25 +159,31 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
         int merged_group_size = group_to_replace_size + replacement_group_size;
         merged_group.setSize(merged_group_size);
         merged_group.updateHighestLevelPlayer();
-        //update all the groups players about their new group
-        merged_group.updateGroupPlayersAboutGroup();
 
         //delete old groups
-        bool to_replace_empty = (group_p_to_replace == 0);
-        bool replacement_empty = (group_to_replace_size == 0);
+        bool to_replace_empty = (group_to_replace_size== 0);
+        bool replacement_empty = (replacement_group_size== 0);
         GroupTree.deleteNode(GroupID);
-        if (to_replace_empty)
+        if (!to_replace_empty)
         {
             NonEmptyGroupsTree.deleteNode(GroupID);
         }
         GroupTree.deleteNode(ReplacementID);
-        if (replacement_empty)
+        if (!replacement_empty)
         {
             NonEmptyGroupsTree.deleteNode(ReplacementID);
         }
 
         //insert merged group
         GroupTree.insertNode(ReplacementID, merged_group);
+        Node_ptr<int,Group> actual_merged_group_node = GroupTree.findLastOfSearchPath(ReplacementID);
+        Group* actual_merged_group_p = &(actual_merged_group_node->getValue());
+        if (!replacement_empty){
+            NonEmptyGroupsTree.insertNode(ReplacementID,actual_merged_group_p);
+        }
+        //update all the groups players about their new group
+        actual_merged_group_p->updateGroupPlayersAboutGroup();
+        return StatusType::SUCCESS;
     }
     catch (const std::bad_alloc &e)
     {
@@ -213,6 +222,7 @@ StatusType OctopusGame::IncreaseLevel(int PlayerID, int LevelIncrease)
         PlayerByLevelTree.insertNode(player_to_increase_level_seat, player_to_increase_level_seat);
 
         updateGlobalBestPlayer();
+        return StatusType::SUCCESS;
 
         //remove player
 
@@ -262,7 +272,7 @@ StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *nu
             Node_ptr<PlayerSeat,PlayerSeat> global_highest_level_player_node= PlayerByLevelTree.select(num_of_players);
             reverseClimbTreeFromRight(global_highest_level_player_node,true,true,true,&index,arr,num_of_players);
             *numOfPlayers=num_of_players;
-            Players = (int**)malloc(num_of_players*sizeof(int*));
+            *Players = (int*)malloc(num_of_players*sizeof(int));
             for (int i=0; i<num_of_players;i++){
                 (*Players)[i]=(arr[i].getValue().getPlayerOnSeat())->getPlayerID();
             }
@@ -312,7 +322,7 @@ StatusType OctopusGame::GetGroupsHighestLevel(int numOfGroups, int **Players)
         int index=0;
         DynamicArray<Pair<int,Group*>> arr(numOfGroups);
         reverseClimbTreeFromLeft(smallest_id_non_empty_group_node,true,true,true,&index,arr,numOfGroups);
-        Players = (int**)malloc(numOfGroups*sizeof(int*));
+        *Players = (int*)malloc(numOfGroups*sizeof(int));
         for (int i=0 ; i<numOfGroups; i++){
             Node_ptr<PlayerSeat,PlayerSeat> highest_level_player_in_group_node= (arr[i].getValue())->getHighestLevelPlayer();
             Player* highest_level_player_in_group = (highest_level_player_in_group_node->getValue()).getPlayerOnSeat();
