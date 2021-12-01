@@ -48,7 +48,6 @@ public:
 
     StatusType GetGroupsHighestLevel(int numOfGroups, int **Players);
 
-    void Quit();
 };
 
 #endif

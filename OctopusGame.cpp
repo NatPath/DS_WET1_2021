@@ -242,7 +242,45 @@ StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *nu
 {
     try
     {
-        // numOfPlayer <-- fitting field in group/Players_tree_size
+        if(GroupID<0){
+            Node_ptr<PlayerSeat,PlayerSeat> playbylevel_root=PlayerByLevelTree.getRoot();
+            int index=0;
+            if (playbylevel_root==nullptr){//no players
+                *numOfPlayers=0;
+                *Players=nullptr;
+                return StatusType::SUCCESS;
+            }
+            int num_of_players = playbylevel_root->getRank();
+            DynamicArray<Pair<PlayerSeat,PlayerSeat>> arr(num_of_players);
+            Node_ptr<PlayerSeat,PlayerSeat> global_highest_level_player_node= PlayerByLevelTree.select(num_of_players);
+            reverseClimbTreeFromRight(global_highest_level_player_node,true,true,true,&index,arr,num_of_players);
+            *numOfPlayers=num_of_players;
+            Players = (int**)malloc(num_of_players*sizeof(int*));
+            for (int i=0; i<num_of_players;i++){
+                (*Players)[i]=(arr[i].getValue().getPlayerOnSeat())->getPlayerID();
+            }
+            return StatusType::SUCCESS;
+        }
+        Node_ptr<int,Group> found_group_node= GroupTree.findLastOfSearchPath(GroupID);
+        if (found_group_node==nullptr){// there are no groups 
+            return StatusType::FAILURE;
+        }
+        Group& found_group = found_group_node->getValue();
+        if (found_group.getID() != GroupID){// group does not exist
+            return StatusType::FAILURE;
+        }
+        Node_ptr<PlayerSeat,PlayerSeat> players_in_group_tree_root= found_group.getPlayerTree().getRoot();
+        int num_of_group_players = players_in_group_tree_root->getRank();
+        DynamicArray<Pair<PlayerSeat,PlayerSeat>> arr(num_of_group_players);
+        int index=0;
+        Node_ptr<PlayerSeat,PlayerSeat> highest_level_in_group_node = found_group.getHighestLevelPlayer();
+        reverseClimbTreeFromRight(highest_level_in_group_node,true,true,true,&index,arr,num_of_group_players);
+        *numOfPlayers=num_of_group_players;
+        Players = (int**)malloc(num_of_group_players*sizeof(int*));
+        for (int i=0; i<num_of_group_players; i++){
+            (*Players)[i]=(arr[i].getValue().getPlayerOnSeat())->getPlayerID();
+        }
+        return StatusType::SUCCESS;
     }
     catch (const std::bad_alloc &e)
     {
@@ -254,6 +292,25 @@ StatusType OctopusGame::GetGroupsHighestLevel(int numOfGroups, int **Players)
 {
     try
     {
+        Node_ptr<int,Group*> non_empty_group_tree_root = NonEmptyGroupsTree.getRoot();
+        if (non_empty_group_tree_root==nullptr){ //there are 0 nonempty groups
+            return StatusType::FAILURE;
+        }
+        int num_of_non_empty_groups = non_empty_group_tree_root->getRank();
+        if (num_of_non_empty_groups< numOfGroups){
+            return StatusType::FAILURE;
+        }
+        Node_ptr<int,Group*> smallest_id_non_empty_group_node = NonEmptyGroupsTree.select(1);
+        int index=0;
+        DynamicArray<Pair<int,Group*>> arr(numOfGroups);
+        reverseClimbTreeFromLeft(smallest_id_non_empty_group_node,true,true,true,&index,arr,numOfGroups);
+        Players = (int**)malloc(numOfGroups*sizeof(int*));
+        for (int i=0 ; i<numOfGroups; i++){
+            Node_ptr<PlayerSeat,PlayerSeat> highest_level_player_in_group_node= (arr[i].getValue())->getHighestLevelPlayer();
+            Player* highest_level_player_in_group = (highest_level_player_in_group_node->getValue()).getPlayerOnSeat();
+            (*Players)[i] = highest_level_player_in_group->getPlayerID();
+        }
+        return StatusType::SUCCESS;
     }
     catch (const std::bad_alloc &e)
     {
@@ -261,6 +318,3 @@ StatusType OctopusGame::GetGroupsHighestLevel(int numOfGroups, int **Players)
     }
 }
 
-void OctopusGame::Quit()
-{
-}

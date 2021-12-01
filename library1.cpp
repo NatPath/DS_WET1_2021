@@ -58,16 +58,6 @@ StatusType IncreaseLevel(void *DS, int PlayerID, int LevelIncrease)
     return (Ogame)->IncreaseLevel(PlayerID, LevelIncrease);
 }
 
-StatusType IncreaseLevel(void *DS, int PlayerID, int LevelIncrease)
-{
-    if (DS == nullptr || PlayerID <= 0 || LevelIncrease <= 0)
-    {
-        return INVALID_INPUT;
-    }
-    OctopusGame *Ogame = static_cast<OctopusGame *>(DS);
-    return (Ogame)->ReplaceGroup(PlayerID, LevelIncrease);
-}
-
 StatusType GetHighestLevel(void *DS, int GroupID, int *PlayerID)
 {
     if (DS == nullptr || PlayerID == nullptr || GroupID == 0)
@@ -80,7 +70,7 @@ StatusType GetHighestLevel(void *DS, int GroupID, int *PlayerID)
 
 StatusType GetAllPlayersByLevel(void *DS, int GroupID, int **Players, int *numOfPlayers)
 {
-    if (DS == nullptr || GroupID == 0 || *Players == nullptr || numOfPlayers = nullptr)
+    if (DS == nullptr || Players == nullptr || numOfPlayers==nullptr || GroupID == 0)
     {
         return INVALID_INPUT;
     }
@@ -90,7 +80,7 @@ StatusType GetAllPlayersByLevel(void *DS, int GroupID, int **Players, int *numOf
 
 StatusType GetGroupsHighestLevel(void *DS, int numOfGroups, int **Players)
 {
-    if (DS == nullptr || numOfGroups <1 || *Players == nullptr)
+    if (DS == nullptr || numOfGroups <1 || Players == nullptr)
     {
         return INVALID_INPUT;
     }
