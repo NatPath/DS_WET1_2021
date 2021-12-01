@@ -238,7 +238,7 @@ StatusType OctopusGame::GetHighestLevel(int GroupID, int *PlayerID)
 {
     if (GroupID<0){
         if (GlobalBestPlayer==nullptr){//there are no players
-            *PlayerID=1;
+            *PlayerID=-1;
             return StatusType::SUCCESS;
         }
         *PlayerID = GlobalBestPlayer->getPlayerID();
@@ -293,7 +293,7 @@ StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *nu
         Node_ptr<PlayerSeat,PlayerSeat> highest_level_in_group_node = found_group.getHighestLevelPlayer();
         reverseClimbTreeFromRight(highest_level_in_group_node,true,true,true,&index,arr,num_of_group_players);
         *numOfPlayers=num_of_group_players;
-        Players = (int**)malloc(num_of_group_players*sizeof(int*));
+        *Players = (int*)malloc(num_of_group_players*sizeof(int));
         for (int i=0; i<num_of_group_players; i++){
             (*Players)[i]=(arr[i].getValue().getPlayerOnSeat())->getPlayerID();
         }
