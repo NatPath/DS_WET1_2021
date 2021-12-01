@@ -33,8 +33,8 @@ public:
     int getLevel();
     void setLevel(int new_level);
     void increaseLevel(int increase_by);
-    //bool operator=()
-
+    friend bool operator<(const Player &player_1, const Player &player_2);
+    friend bool operator==(const Player &player_1, const Player &player_2);
 
 
 
