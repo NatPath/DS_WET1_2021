@@ -286,7 +286,7 @@ RemovePlayer 2//success
 RemovePlayer 1//success
 //end of testing
 Quit
-//IncreaseLevel(int PlayerID,int levelIncrease)
+//3 -IncreaseLevel(int PlayerID,int levelIncrease)
 Init
 AddGroup 1
 IncreaseLevel 0 1 //invalid_input
@@ -323,7 +323,7 @@ IncreaseLevel 2 2 //success
 //end of Increase_level.
 Quit
 
-//GetHighestLevel
+//4- GetHighestLevel
 Init
 AddGroup 1
 AddPlayer 3 1 1

@@ -1,0 +1,1 @@
+for i in {0..99}; do valgrind --leak-check=full ./OctopusGame.out < Tests/wet1_tests/input_$i.txt > Tests/my_output/my_output_$i.txt; done

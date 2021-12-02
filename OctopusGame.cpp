@@ -221,14 +221,14 @@ StatusType OctopusGame::IncreaseLevel(int PlayerID, int LevelIncrease)
         Group *player_group_p = player_to_increase_level->getGroupPointer();
         AVL_Tree<PlayerSeat, PlayerSeat> &player_to_increase_level_group_tree = player_group_p->getPlayerTree(); // need to verify assignment operator of AVL. May cause bugs.
         PlayerSeat player_to_increase_level_seat(player_to_increase_level);
+        PlayerByLevelTree.deleteNode(player_to_increase_level_seat);
         player_to_increase_level_group_tree.deleteNode(player_to_increase_level_seat);
         player_to_increase_level->setLevel(player_to_increase_level->getLevel() + LevelIncrease);
         player_to_increase_level_group_tree.insertNode(player_to_increase_level_seat, player_to_increase_level_seat);
         player_group_p->updateHighestLevelPlayer();
-        PlayerByLevelTree.deleteNode(player_to_increase_level_seat);
         PlayerByLevelTree.insertNode(player_to_increase_level_seat, player_to_increase_level_seat);
-
         updateGlobalBestPlayer();
+
         return StatusType::SUCCESS;
 
         //remove player
