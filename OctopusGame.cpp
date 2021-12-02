@@ -298,6 +298,11 @@ StatusType OctopusGame::GetAllPlayersByLevel(int GroupID, int **Players, int *nu
             return StatusType::FAILURE;
         }
         Node_ptr<PlayerSeat,PlayerSeat> players_in_group_tree_root= found_group.getPlayerTree().getRoot();
+        if (players_in_group_tree_root == nullptr){
+            *numOfPlayers=0;
+            *Players=nullptr;
+            return StatusType::SUCCESS;
+        }
         int num_of_group_players = players_in_group_tree_root->getRank();
         DynamicArray<Pair<PlayerSeat,PlayerSeat>> arr(num_of_group_players);
         int index=0;
