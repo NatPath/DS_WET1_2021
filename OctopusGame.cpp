@@ -187,6 +187,9 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
         }
         //update all the groups players about their new group
         actual_merged_group_p->updateGroupPlayersAboutGroup();
+        //merged_tree prevent destruction
+        merged_tree.setRoot(nullptr);
+        merged_group.getPlayerTree().setRoot(nullptr);
         return StatusType::SUCCESS;
     }
     catch (const std::bad_alloc &e)

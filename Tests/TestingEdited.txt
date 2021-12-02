@@ -1,4 +1,5 @@
 //by Ziv Damir and Tom Guy
+// 0
 Init 
 //addGroup
 AddGroup 1 //success
@@ -67,7 +68,7 @@ AddPlayer 123 13 -1 //Invalid_input
 AddPlayer 14 14 14  //success
 AddPlayer 123 14 -1 //Invalid_input
 Quit //end of AddPlayerTesting&AddGroup.
-//RemovePlayer(playerId)
+//1- RemovePlayer(playerId)
 Init
 AddGroup 1 //full group
 AddGroup 2 //empty group
@@ -171,7 +172,7 @@ RemovePlayer 13 //failure
 RemovePlayer 14 //success
 RemovePlayer 14 //failure 
 Quit //end of RemovePlayer
-//replaceGroups
+//2- replaceGroups
 Init
 //ReplaceGroup(int GroupId,int ReplacementID) REPLACEMENT GETS GROUPID'S players.
 AddGroup 1// success
