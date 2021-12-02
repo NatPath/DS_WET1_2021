@@ -257,6 +257,10 @@ StatusType OctopusGame::GetHighestLevel(int GroupID, int *PlayerID)
         return StatusType::FAILURE;
     }
     Node_ptr<PlayerSeat,PlayerSeat> highest_player_in_group =found_group.getHighestLevelPlayer();
+    if (highest_player_in_group==nullptr){
+        *PlayerID=-1;
+        return StatusType::SUCCESS;
+    }
     *PlayerID = highest_player_in_group->getValue().getPlayerOnSeat()->getPlayerID();
     return StatusType::SUCCESS;
 
