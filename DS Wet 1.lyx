@@ -252,7 +252,48 @@
 \begin_inset Formula $Group$
 \end_inset
 
- - קבוצה של שחקנים המכילה טיפוסים מסוג 
+ - טיפוס המתאר קבוצה של שחקנים.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $PlayerSeat$
+\end_inset
+
+ - טיפוס המכיל מצביע לשחקן המתאים בעץ השחקנים 
+\begin_inset Formula $PlayerByIDTree$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Player$
+\end_inset
+
+ - טיפוס המתאר שחקן.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+טיוטא
+\end_layout
+
+\begin_layout Itemize
+המכילה עץ טיפוסים מסוג 
 \begin_inset Formula $PlayerSeat$
 \end_inset
 
@@ -264,25 +305,11 @@
 \series bold
 )או גודל?( 
 \series default
-האם הקבוצה ריקה או לא.
+האם הקבוצה ריקה או לא
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $PlayerSeat$
-\end_inset
-
- - טיפוס המכיל מצביע לשחקן המתאים בעץ השחקנים 
-\begin_inset Formula $PlayerTree$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $Player$
-\end_inset
-
- - שחקן המזוהה באמצעות 
+\begin_layout Itemize
+המזוהה באמצעות 
 \begin_inset Formula $PlayerID$
 \end_inset
 
@@ -301,7 +328,7 @@
 שדות המבנה:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \begin_inset Formula $PlayerByIDTree$
 \end_inset
 
@@ -345,7 +372,7 @@ AVL
  .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \begin_inset Formula $GroupTree$
 \end_inset
 
@@ -414,7 +441,7 @@ AVL
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \begin_inset Formula $PlayerByLevelTree$
 \end_inset
 
@@ -447,23 +474,23 @@ AVL
 \lang english
 AVL
 \lang hebrew
- שמכיל את השחקנים במשחק )טיפוס מסוג 
-\begin_inset Formula $Player$
+ שמכיל את מצביעים לשחקנים במשחק )טיפוס מסוג 
+\begin_inset Formula $PlayerSeat$
 \end_inset
 
 ( ממוין לפי זוג סדור של 
 \begin_inset Formula $\left(PlayerID,Level\right)$
 \end_inset
 
- כאשר המיון הוא קודם לפי 
+ המתאימים לשחקן המוצבע, כאשר המיון הוא קודם לפי 
 \begin_inset Formula $level$
 \end_inset
 
- בסדר ולאחר מכן לפי 
+ בסדר עולה ולאחר מכן לפי 
 \begin_inset Formula $PlayerID$
 \end_inset
 
- סדר יורד.
+ בסדר יורד.
  כאשר הערך הכי ימני יישמר בשדה 
 \begin_inset Formula $GlobalBestPlayer$
 \end_inset
@@ -471,18 +498,55 @@ AVL
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \begin_inset Formula $NonEmptyGroupsTree$
 \end_inset
 
- -עץ כל הקבוצות הלא ריקות לפי 
+ - עץ 
+\lang english
+AVL
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+שמכיל מצביעים לקבוצות 
+\series bold
+הלא ריקות 
+\series default
+בעץ הקבוצות 
+\begin_inset Formula $GroupTree$
+\end_inset
+
+, אשר ממוין לפי 
 \begin_inset Formula $GroupID$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \begin_inset Formula $GlobalBestPlayer$
 \end_inset
 
@@ -596,7 +660,7 @@ AVL
 \end_layout
 
 \begin_layout Subsection*
-\begin_inset Formula $AddGroup\left(\right)$
+\begin_inset Formula $AddGroup\left(void*\,DS,int\,GroupID\right)$
 \end_inset
 
 :
@@ -607,7 +671,11 @@ AVL
 \begin_inset Formula $Group$
 \end_inset
 
-( ריקה לעץ הקבוצות )
+( ריקה בעלת מספר מזהה 
+\begin_inset Formula $GroupID$
+\end_inset
+
+ לעץ הקבוצות )
 \begin_inset Formula $GroupTree$
 \end_inset
 
@@ -633,7 +701,7 @@ AVL
 \end_layout
 
 \begin_layout Subsection*
-\begin_inset Formula $AddPlayer\left(\right)$
+\begin_inset Formula $AddPlayer\left(void*\,DS,int\,PlayerID,int\,GroupID,int\,Level\right)$
 \end_inset
 
 :
@@ -644,7 +712,7 @@ AVL
 \begin_inset Formula $Player$
 \end_inset
 
- בחדש למערכת:
+ חדש למערכת:
 \end_layout
 
 \begin_deeper
@@ -678,14 +746,14 @@ AVL
 \end_inset
 
  כאשר 
-\begin_inset Formula $Level$
+\begin_inset Formula $Player.level$
 \end_inset
 
  יאותחל ל-
-\begin_inset Formula $0$
+\begin_inset Formula $Level$
 \end_inset
 
- - סיבוכיות 
+ שהוכנס - סיבוכיות 
 \begin_inset Formula $O\left(\log n\right)$
 \end_inset
 
@@ -737,9 +805,23 @@ AVL
 \end_layout
 
 \begin_layout Itemize
-הכנסה של קבוצה ריקה ללא ריקה בעת הוספת השחקן
+אם הקבוצה שאליה הוכנס השחקן הייתה ריקה לפני הכנסתו:
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+נכניס את הקבוצה אליה הוא הוכנס לעץ 
+\begin_inset Formula $NonEmptyGroupsTree$
+\end_inset
+
+ - סיבוכיות 
+\begin_inset Formula $O\left(\log k\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
 \end_deeper
 \begin_layout Standard
 
@@ -776,6 +858,23 @@ AVL
 
 \begin_deeper
 \begin_layout Itemize
+נחפש את השחקן בעץ השחקנים 
+\begin_inset Formula $PlayerByIDTree$
+\end_inset
+
+ - סיבוכיות 
+\begin_inset Formula $O\left(\log n\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+אם השחקן נמצא:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
 השחקן 
 \begin_inset Formula $Player$
 \end_inset
@@ -804,19 +903,7 @@ AVL
 \begin_inset Formula $PlayerByIDTree$
 \end_inset
 
- זה יהיה בסיבוכיות של 
-\begin_inset Formula $O\left(1\right)$
-\end_inset
-
- ועוד סידור של העץ ב-
-\begin_inset Formula $O\left(\log n\right)$
-\end_inset
-
- - סה
-\begin_inset Quotes erd
-\end_inset
-
-כ סיבוכיות 
+ - סיבוכיות 
 \begin_inset Formula $O\left(\log n\right)$
 \end_inset
 
@@ -829,10 +916,10 @@ AVL
 \end_inset
 
  מעץ הקבוצות 
-\begin_inset Formula $GroupTree$
+\begin_inset Formula $GroupTreePlayersTree$
 \end_inset
 
- באופן ישר ממצביע מ-
+ באופן ישיר ממצביע מ-
 \begin_inset Formula $Player$
 \end_inset
 
@@ -868,7 +955,6 @@ AVL
 .
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
 אם הקבוצה 
 \begin_inset Formula $Group$
