@@ -50,7 +50,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/OctopusGame.out",
-            "args": ["<${workspaceFolder}/Tests/test2.in"],
+            "args": ["<${workspaceFolder}/Tests/Our_Tests/Input_Files/test_Add_Remove_Player.in"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

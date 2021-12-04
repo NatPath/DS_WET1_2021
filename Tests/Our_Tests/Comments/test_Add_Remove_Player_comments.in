@@ -1,0 +1,163 @@
+Init
+
+// #1 Add and Remove Player - no groups
+
+ // Should fail no groups
+1  AddPlayer 1 1 0  
+2  AddPlayer 1 1 0  // Double Check
+3  RemovePlayer 1 
+4  RemovePlayer 1 // Double Check
+
+// Invalid Input
+5  AddPlayer 1 1 -1 
+6  AddPlayer 1 -1 0
+7  AddPlayer -1 1 0 
+8  RemovePlayer -1
+9  RemovePlayer 0 
+
+// #2 Add Groups 
+
+// Invalid Input
+10  AddGroup -1
+11  AddGroup 0
+
+// adding first group - expected success
+13  AddGroup 1
+
+// add group fail
+14  AddGroup 1
+15  AddGroup 1 // Double Check
+
+// adding more groups - expected success
+16  AddGroup 2
+17  AddGroup 7
+
+// Checking failure for all groups
+18  AddGroup 1
+19  AddGroup 2
+20  AddGroup 7
+
+// Adding first player to non-existing groups - expected failure
+21  AddPlayer 1 3 3
+22  AddPlayer 1 4 3
+23  AddPlayer 1 8 3
+
+// Adding first player to group 1 - He is leading - expected success
+24  AddPlayer 1 1 1
+
+// Adding first player again - expected failure
+25  AddPlayer 1 1 1 // same command
+26  AddPlayer 1 1 3 // different level
+27  AddPlayer 1 2 1 // different existing group
+28  AddPlayer 1 2 3 // different existing group and level
+
+// Adding first player again - expected invalid input
+29  AddPlayer 1 1 -1 // invalid level
+30  AddPlayer 1 -1 1 // invalid group
+
+// Adding another player to group 1 - expected success
+31  AddPlayer 3 1 1 // to same group
+
+// #3 Checking remove and highest level 
+32  GetHighestLevel 1 // should print 1
+33  RemovePlayer 1 // Success
+34  GetHighestLevel 1 // should print 3
+35  RemovePlayer 3 // Success
+36  RemovePlayer 1 // Fail
+37  RemovePlayer 3 // Fail
+38  GetHighestLevel 1 // expected -1
+39  AddPlayer 3 1 1 // Success - again after removal
+40  AddPlayer 4 1 1 // Success
+41  GetHighestLevel 1 // expected 3
+42  AddPlayer 1 1 1 // Success - again after removal
+43  GetHighestLevel 1 // expected 1
+44  RemovePlayer 3 // Success
+45  RemovePlayer 1 // Success
+46  GetHighestLevel 1 // expected 4
+47  RemovePlayer 4 // Success
+
+
+// #4 Checking different groups
+
+48  AddPlayer 3 1 1 // Success
+49  AddPlayer 4 7 1 // Success
+50  AddPlayer 4 1 1 // Fail
+51  AddPlayer 3 2 1 // Fail
+52  AddPlayer 5 1 2 // Success
+53  AddPlayer 5 1 3 // Fail - Player exists
+54  AddPlayer 5 2 1 // Fail - non-existing group
+55  AddPlayer 7 1 3 // Success
+56  GetHighestLevel 1 // expected 7
+57  AddPlayer 2 1 3 // Success
+58  GetHighestLevel 1 // expected 2
+59  AddPlayer 2 2 3 // Fail
+60  AddPlayer 15 2 4 // Success
+61  AddPlayer 16 7 3 // Success
+62  GetHighestLevel 7 // expected 16
+63  GetHighestLevel 2 // expected 15
+64  GetHighestLevel -1 // expected 15
+65  GetHighestLevel -20 // expected 15 Double check
+66  AddPlayer 1 7 20 // Success
+67  GetHighestLevel 0 // Invalid input
+68  GetHighestLevel -1 //  expected 1
+69  AddPlayer 8 7 21 // Success
+70  GetHighestLevel -1 // Success
+71 IncreaseLevel 1 0 // Invalid input
+72 IncreaseLevel 1 -1 // Invalid input
+73 IncreaseLevel 50 -1 // Invalid input
+74 IncreaseLevel 50 1 // Fail
+75 IncreaseLevel 1 1 // Success
+76 GetHighestLevel -1 // Success
+77 GetAllPlayersByLevel 1 // expected 2,7,5,3
+78 GetAllPlayersByLevel 2 // expected 15
+79 GetAllPlayersByLevel 7 // expected 1,8,16,4
+80 GetAllPlayersByLevel 0 // Invalid input
+81 GetAllPlayersByLevel 3 // Fail
+82 GetAllPlayersByLevel -1 // expected 1,8,15,2,7,16,5,3,4
+83 IncreaseLevel 4 99 // Success
+84 GetAllPlayersByLevel -1 // expected 4,8,15,2,7,16,5,3
+85 GetAllPlayersByLevel 7 // expected 4,1,8,16
+86 RemovePlayer 4 // Success
+87 GetAllPlayersByLevel -1 // expected 8,15,2,7,16,5,3
+88 GetAllPlayersByLevel 7 // expected 1,8,16
+89 RemovePlayer 8 // Success
+90 GetAllPlayersByLevel -1 // expected 15,2,7,16,5,3
+91 GetAllPlayersByLevel 7 // expected 1,16
+92 RemovePlayer 7 // Success
+93 GetAllPlayersByLevel -1 // expected 15,2,7,16,5,3
+94 GetAllPlayersByLevel 7 // expected 1,16
+95 AddPlayer 7 7 5 // Success
+96 GetAllPlayersByLevel -1 // expected 1,7,15,2,16,5,3
+97 GetAllPlayersByLevel 7 // expected 1,7,16
+98 IncreaseLevel 16 1
+99 GetAllPlayersByLevel -1 // expected 1,7,15,16,2,5,3
+100 GetAllPlayersByLevel 7 // expected 1,7,16
+101 IncreaseLevel 16 1
+102 GetAllPlayersByLevel -1 // expected 1,7,16,15,2,5,3
+103 GetAllPlayersByLevel 7 // expected 1,7,16
+104 IncreaseLevel 16 1
+105 GetAllPlayersByLevel -1 // expected 1,16,7,15,2,5,3
+106 GetAllPlayersByLevel 7 // expected 1,16,7
+107 RemovePlayer 1 // Success
+108 GetHighestLevel -1 // expected 16
+109 RemovePlayer 16 // Success
+110 GetHighestLevel -1 // expected 7
+111 RemovePlayer 15 // Success
+112 GetHighestLevel -1 // expected 7
+113 RemovePlayer 2 // Success
+114 GetHighestLevel -1 // expected 7
+115 RemovePlayer 3 // Success
+116 GetHighestLevel -1 // expected 7
+117 RemovePlayer 4 // Fail
+118 GetHighestLevel -1 // expected 7
+119 RemovePlayer 5 // Success
+120 GetHighestLevel -1 // expected 7
+121 RemovePlayer 6 // Fail
+122 GetHighestLevel -1 // expected 7
+123 RemovePlayer 7 // Success
+124 GetHighestLevel -1 // expected -1
+125 GetAllPlayersByLevel -1 // expected no more players (Null)
+
+// Checking replace groups (groups existing so far 1,2,7)
+
+

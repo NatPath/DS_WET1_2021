@@ -25,7 +25,7 @@
         {
             "label": "test_extra_functions",
             "type": "shell",
-            "command": "g++ -g test_extra_functions.cpp -o test_extra_functions.out",
+            "command": "g++ -g main1.cpp.cpp -o OctopusGame.out",
         },
         {
             "label": "test_OctopusGame",
