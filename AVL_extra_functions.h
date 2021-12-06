@@ -181,6 +181,11 @@ void reverseClimbTreeFromRight(std::shared_ptr<AVL_NODE<KEY,VAL>> current,bool g
         }
     }
 }
+
+template <typename KEY,typename VAL>
+void updateAttributes(Node_ptr<KEY,VAL>& node_ptr){
+    node_ptr->updateAttributes();    
+}
 /**
  * merge tree1 and tree2 into one big tree.
  * both of the input trees are valid after the merge.
@@ -195,7 +200,10 @@ AVL_Tree<KEY,VAL> merge_trees(AVL_Tree<KEY,VAL>& tree1,AVL_Tree<KEY,VAL>& tree2)
 
     List<Pair<KEY,VAL>> merged_list = mergeOrderedLists(list1,list2);
 
-    return ListToTree(merged_list);
+    AVL_Tree<KEY,VAL> res = ListToTree(merged_list);
+    itterateOrder(res.getRoot(),POST,updateAttributes,false);
+    return res;
+
 }
 
 

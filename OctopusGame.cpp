@@ -137,7 +137,6 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
 {
     try
     {
-
         //return Failure if there isn't a group with GroupId or ReplacementId
         Node_ptr<int, Group> group_node_to_replace = GroupTree.findLastOfSearchPath(GroupID);
         Node_ptr<int, Group> replacement_group_node = GroupTree.findLastOfSearchPath(ReplacementID);
@@ -182,11 +181,12 @@ StatusType OctopusGame::ReplaceGroup(int GroupID, int ReplacementID)
         GroupTree.insertNode(ReplacementID, merged_group);
         Node_ptr<int,Group> actual_merged_group_node = GroupTree.findLastOfSearchPath(ReplacementID);
         Group* actual_merged_group_p = &(actual_merged_group_node->getValue());
-        if (!replacement_empty){
+        if (merged_group_size!=0){
             NonEmptyGroupsTree.insertNode(ReplacementID,actual_merged_group_p);
         }
         //update all the groups players about their new group
         actual_merged_group_p->updateGroupPlayersAboutGroup();
+        actual_merged_group_p->updateHighestLevelPlayer();
         //merged_tree prevent destruction
         merged_tree.setRoot(nullptr);
         merged_group.getPlayerTree().setRoot(nullptr);

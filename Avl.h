@@ -128,6 +128,10 @@ class AVL_NODE{
     void updateRank(){
         rank=this->calcRank();
     }
+    void updateAttributes(){
+        this->updateHeight();
+        this->updateRank();
+    }
     // print functions- expects printable type
     void printValue() const{
         print("value:");
