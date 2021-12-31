@@ -260,7 +260,10 @@ ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	991196717
+2	||	1994407189
+and there are no more players!
 IncreaseLevel: SUCCESS
 ReplaceGroup: FAILURE
 ReplaceGroup: SUCCESS
@@ -299,11 +302,15 @@ RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2061368341
+2	||	1697489577
+3	||	683193281
+and there are no more players!
 IncreaseLevel: SUCCESS
 GetHighestLevel: INVALID_INPUT
 GroupIndex	||	Player
-1	||	1697489577
+1	||	2061368341
 and there are no more players!
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
@@ -337,7 +344,9 @@ and there are no more players!
 AddGroup: SUCCESS
 Highest level player is: 1434287035
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1434287035
+and there are no more players!
 AddGroup: SUCCESS
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
@@ -355,12 +364,16 @@ RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS
 and there are no more players!
 Highest level player is: 1004292727
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1004292727
+and there are no more players!
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	98139896
+and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: FAILURE
 RemovePlayer: SUCCESS
@@ -525,7 +538,10 @@ ReplaceGroup: SUCCESS
 IncreaseLevel: FAILURE
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1208089560
+2	||	62708142
+and there are no more players!
 IncreaseLevel: FAILURE
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
@@ -538,7 +554,10 @@ RemovePlayer: SUCCESS
 ReplaceGroup: SUCCESS
 GetGroupsHighestLevel: FAILURE
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1513740294
+2	||	450372580
+and there are no more players!
 AddGroup: SUCCESS
 IncreaseLevel: INVALID_INPUT
 IncreaseLevel: SUCCESS

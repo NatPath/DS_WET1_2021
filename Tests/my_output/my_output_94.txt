@@ -81,7 +81,11 @@ ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	311713977
+2	||	384926910
+3	||	86631998
+and there are no more players!
 AddPlayer: FAILURE
 RemovePlayer: SUCCESS
 AddGroup: SUCCESS
@@ -112,9 +116,9 @@ GroupIndex	||	Player
 1	||	311713977
 2	||	384926910
 3	||	1251637466
-4	||	702583535
-5	||	1592253319
-6	||	1221480516
+4	||	655681381
+5	||	702583535
+6	||	1592253319
 and there are no more players!
 AddPlayer: FAILURE
 ReplaceGroup: SUCCESS
@@ -194,7 +198,7 @@ ReplaceGroup: FAILURE
 AddGroup: SUCCESS
 GroupIndex	||	Player
 1	||	969873536
-2	||	702583535
+2	||	1221480516
 and there are no more players!
 AddPlayer: INVALID_INPUT
 IncreaseLevel: SUCCESS
@@ -206,7 +210,7 @@ ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
 1	||	969873536
-2	||	702583535
+2	||	1221480516
 and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: FAILURE
@@ -285,7 +289,12 @@ GroupIndex	||	Player
 and there are no more players!
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1423132281
+2	||	901534245
+3	||	969873536
+4	||	919515913
+and there are no more players!
 IncreaseLevel: SUCCESS
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
@@ -515,7 +524,12 @@ ReplaceGroup: SUCCESS
 Rank	||	Player
 1	||	761940479
 and there are no more players!
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1774857581
+2	||	1242120928
+3	||	761940479
+4	||	1525352258
+and there are no more players!
 RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS

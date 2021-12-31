@@ -28,7 +28,10 @@ IncreaseLevel: SUCCESS
 RemovePlayer: INVALID_INPUT
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1506055037
+2	||	363206685
+and there are no more players!
 RemovePlayer: SUCCESS
 AddGroup: INVALID_INPUT
 AddGroup: SUCCESS
@@ -201,11 +204,16 @@ and there are no more players!
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1939082079
+2	||	893521361
+and there are no more players!
 RemovePlayer: SUCCESS
 RemovePlayer: FAILURE
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1939082079
+and there are no more players!
 Highest level player is: 1939082079
 AddPlayer: SUCCESS
 AddPlayer: FAILURE
@@ -366,13 +374,17 @@ AddGroup: INVALID_INPUT
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	466982218
+and there are no more players!
 RemovePlayer: FAILURE
 Highest level player is: 466982218
 ReplaceGroup: INVALID_INPUT
 IncreaseLevel: FAILURE
 ReplaceGroup: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	466982218
+and there are no more players!
 Highest level player is: 466982218
 AddGroup: FAILURE
 Highest level player is: 466982218
@@ -381,11 +393,15 @@ AddPlayer: SUCCESS
 Highest level player is: 466982218
 AddGroup: FAILURE
 Highest level player is: 466982218
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	466982218
+and there are no more players!
 Highest level player is: 466982218
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	466982218
+and there are no more players!
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
@@ -472,7 +488,9 @@ Highest level player is: 2002270877
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
 GetHighestLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2002270877
+and there are no more players!
 AddPlayer: FAILURE
 AddPlayer: SUCCESS
 RemovePlayer: FAILURE

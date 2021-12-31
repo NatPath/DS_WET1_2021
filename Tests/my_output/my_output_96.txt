@@ -260,7 +260,9 @@ AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddPlayer: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1966880762
+and there are no more players!
 IncreaseLevel: SUCCESS
 ReplaceGroup: INVALID_INPUT
 RemovePlayer: INVALID_INPUT

@@ -118,7 +118,7 @@ IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1598422456
+1	||	511447257
 and there are no more players!
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
@@ -139,8 +139,12 @@ AddGroup: FAILURE
 RemovePlayer: SUCCESS
 and there are no more players!
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	511447257
+and there are no more players!
+GroupIndex	||	Player
+1	||	511447257
+and there are no more players!
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS

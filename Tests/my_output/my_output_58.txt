@@ -128,7 +128,9 @@ Highest level player is: 364831746
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
 IncreaseLevel: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	364831746
+and there are no more players!
 RemovePlayer: FAILURE
 IncreaseLevel: FAILURE
 IncreaseLevel: SUCCESS
@@ -181,9 +183,9 @@ Highest level player is: -1
 AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 GroupIndex	||	Player
-1	||	2014618806
-2	||	1979455821
-3	||	113945498
+1	||	1848016549
+2	||	2014618806
+3	||	1979455821
 and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
@@ -196,9 +198,9 @@ AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 RemovePlayer: INVALID_INPUT
 GroupIndex	||	Player
-1	||	2014618806
-2	||	42117619
-3	||	113945498
+1	||	239655482
+2	||	2014618806
+3	||	42117619
 and there are no more players!
 GetHighestLevel: FAILURE
 ReplaceGroup: SUCCESS

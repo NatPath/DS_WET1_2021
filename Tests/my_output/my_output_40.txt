@@ -539,8 +539,8 @@ RemovePlayer: SUCCESS
 AddGroup: SUCCESS
 GroupIndex	||	Player
 1	||	878115759
-2	||	796144319
-3	||	1031648001
+2	||	969265171
+3	||	796144319
 and there are no more players!
 Highest level player is: 878115759
 GroupIndex	||	Player
@@ -548,6 +548,12 @@ GroupIndex	||	Player
 and there are no more players!
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	878115759
+2	||	969265171
+3	||	796144319
+4	||	1111769398
+5	||	1031648001
+and there are no more players!
 IncreaseLevel: INVALID_INPUT
 Quit done.

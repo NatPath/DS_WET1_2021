@@ -121,7 +121,11 @@ AddPlayer: FAILURE
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	535279375
+2	||	789540871
+3	||	1860675966
+and there are no more players!
 GetHighestLevel: INVALID_INPUT
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
@@ -129,7 +133,7 @@ Highest level player is: -1
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
 GroupIndex	||	Player
-1	||	1521136392
+1	||	535279375
 and there are no more players!
 AddGroup: SUCCESS
 AddGroup: FAILURE
@@ -248,10 +252,22 @@ RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 AddPlayer: INVALID_INPUT
 and there are no more players!
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1305402173
+2	||	82198109
+3	||	1521136392
+4	||	147333134
+5	||	1732673716
+and there are no more players!
 AddGroup: SUCCESS
 GetAllPlayersByLevel: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1305402173
+2	||	82198109
+3	||	1521136392
+4	||	147333134
+5	||	1732673716
+and there are no more players!
 and there are no more players!
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
@@ -277,7 +293,13 @@ RemovePlayer: SUCCESS
 Highest level player is: 147333134
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1305402173
+2	||	82198109
+3	||	1545802819
+4	||	147333134
+5	||	196551777
+and there are no more players!
 RemovePlayer: INVALID_INPUT
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
@@ -304,7 +326,12 @@ IncreaseLevel: INVALID_INPUT
 IncreaseLevel: FAILURE
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1545802819
+2	||	205692424
+3	||	73617895
+4	||	789043441
+and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
@@ -317,7 +344,15 @@ ReplaceGroup: SUCCESS
 IncreaseLevel: FAILURE
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1794156059
+2	||	2002045671
+3	||	1545802819
+4	||	205692424
+5	||	1950563090
+6	||	73617895
+7	||	789043441
+and there are no more players!
 IncreaseLevel: INVALID_INPUT
 RemovePlayer: SUCCESS
 AddGroup: SUCCESS

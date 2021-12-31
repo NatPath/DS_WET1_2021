@@ -110,9 +110,12 @@ RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
 GroupIndex	||	Player
-1	||	1545014277
+1	||	308100894
+2	||	1545014277
+and there are no more players!
+GroupIndex	||	Player
+1	||	308100894
 and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: INVALID_INPUT

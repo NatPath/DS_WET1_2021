@@ -306,8 +306,8 @@ Highest level player is: 866315029
 AddPlayer: INVALID_INPUT
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	866315029
-2	||	1752746887
+1	||	1822138066
+2	||	866315029
 and there are no more players!
 AddGroup: SUCCESS
 AddGroup: FAILURE

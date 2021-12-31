@@ -252,6 +252,7 @@ StatusType OctopusGame::GetHighestLevel(int GroupID, int *PlayerID)
         return StatusType::SUCCESS;
     }   
     Node_ptr<int,Group> found_node = GroupTree.findLastOfSearchPath(GroupID);
+    if (found_node==nullptr){ return StatusType::FAILURE;}
     Group& found_group = found_node->getValue();
     if (found_group.getID() != GroupID){// the group is not in the tree
         return StatusType::FAILURE;

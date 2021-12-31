@@ -50,8 +50,8 @@ AddPlayer: SUCCESS
 AddPlayer: SUCCESS
 GroupIndex	||	Player
 1	||	744187286
-2	||	1466294398
-3	||	1774727737
+2	||	712765514
+3	||	1466294398
 and there are no more players!
 IncreaseLevel: INVALID_INPUT
 Highest level player is: -1
@@ -70,7 +70,10 @@ IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
 AddGroup: FAILURE
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	193620971
+2	||	712765514
+and there are no more players!
 Highest level player is: 193620971
 IncreaseLevel: SUCCESS
 GetAllPlayersByLevel: FAILURE
@@ -112,7 +115,7 @@ AddPlayer: INVALID_INPUT
 GroupIndex	||	Player
 1	||	1502483378
 2	||	551789780
-3	||	1349334004
+3	||	193620971
 and there are no more players!
 AddPlayer: FAILURE
 AddGroup: SUCCESS
@@ -189,14 +192,18 @@ Highest level player is: -1
 IncreaseLevel: SUCCESS
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1349334004
+and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
 AddPlayer: FAILURE
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1349334004
+and there are no more players!
 ReplaceGroup: INVALID_INPUT
 AddPlayer: INVALID_INPUT
 IncreaseLevel: SUCCESS
@@ -229,7 +236,9 @@ Highest level player is: 1349334004
 ReplaceGroup: INVALID_INPUT
 AddPlayer: INVALID_INPUT
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1349334004
+and there are no more players!
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
 RemovePlayer: INVALID_INPUT
@@ -237,7 +246,9 @@ ReplaceGroup: SUCCESS
 AddGroup: INVALID_INPUT
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1349334004
+and there are no more players!
 AddPlayer: FAILURE
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
@@ -252,7 +263,9 @@ IncreaseLevel: SUCCESS
 RemovePlayer: SUCCESS
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	193620971
+and there are no more players!
 Rank	||	Player
 1	||	193620971
 2	||	1097258969

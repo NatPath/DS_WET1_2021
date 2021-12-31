@@ -50,7 +50,11 @@ and there are no more players!
 ReplaceGroup: FAILURE
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	95704267
+2	||	1151340297
+3	||	1532194349
+and there are no more players!
 ReplaceGroup: SUCCESS
 Highest level player is: 1532194349
 AddGroup: SUCCESS
@@ -317,7 +321,7 @@ AddGroup: SUCCESS
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
 GroupIndex	||	Player
-1	||	871050826
+1	||	1973078753
 and there are no more players!
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS

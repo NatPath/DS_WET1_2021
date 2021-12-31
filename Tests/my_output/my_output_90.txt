@@ -306,7 +306,7 @@ AddPlayer: FAILURE
 IncreaseLevel: SUCCESS
 GroupIndex	||	Player
 1	||	1319835301
-2	||	144236436
+2	||	182157414
 and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
@@ -381,7 +381,7 @@ GetGroupsHighestLevel: FAILURE
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1411192605
+1	||	1170010342
 and there are no more players!
 ReplaceGroup: INVALID_INPUT
 AddPlayer: FAILURE

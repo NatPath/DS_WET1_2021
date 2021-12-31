@@ -305,7 +305,10 @@ Rank	||	Player
 and there are no more players!
 IncreaseLevel: SUCCESS
 IncreaseLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1756489558
+2	||	792431594
+and there are no more players!
 AddGroup: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS

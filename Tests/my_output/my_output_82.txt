@@ -261,9 +261,20 @@ RemovePlayer: SUCCESS
 Highest level player is: 125442978
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	657111129
+2	||	1216265357
+3	||	1936180339
+4	||	125442978
+5	||	1557115397
+and there are no more players!
 AddGroup: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	657111129
+2	||	1216265357
+3	||	1936180339
+4	||	125442978
+and there are no more players!
 RemovePlayer: SUCCESS
 AddPlayer: INVALID_INPUT
 Highest level player is: 657111129
@@ -302,7 +313,13 @@ RemovePlayer: SUCCESS
 IncreaseLevel: INVALID_INPUT
 Highest level player is: 1448119845
 Highest level player is: -1
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1443319334
+2	||	1936180339
+3	||	1448119845
+4	||	125442978
+5	||	899170004
+and there are no more players!
 RemovePlayer: SUCCESS
 ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
@@ -454,9 +471,9 @@ AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 GroupIndex	||	Player
-1	||	320428866
-2	||	898600511
-3	||	724041232
+1	||	2007241606
+2	||	320428866
+3	||	898600511
 and there are no more players!
 IncreaseLevel: SUCCESS
 and there are no more players!
@@ -486,7 +503,14 @@ Rank	||	Player
 and there are no more players!
 AddPlayer: FAILURE
 AddGroup: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2007241606
+2	||	898600511
+3	||	724041232
+4	||	805582684
+5	||	2042862363
+6	||	1810167588
+and there are no more players!
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
@@ -542,8 +566,8 @@ Rank	||	Player
 8	||	724041232
 and there are no more players!
 GroupIndex	||	Player
-1	||	898600511
-2	||	724041232
+1	||	2007241606
+2	||	898600511
 and there are no more players!
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
@@ -560,7 +584,11 @@ AddGroup: FAILURE
 Highest level player is: 290554913
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	898600511
+2	||	2007241606
+3	||	1611720341
+and there are no more players!
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS

@@ -293,7 +293,7 @@ AddPlayer: INVALID_INPUT
 ReplaceGroup: INVALID_INPUT
 AddPlayer: SUCCESS
 GroupIndex	||	Player
-1	||	1824702413
+1	||	1132318346
 and there are no more players!
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS

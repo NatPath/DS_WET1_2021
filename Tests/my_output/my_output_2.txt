@@ -205,12 +205,17 @@ IncreaseLevel: SUCCESS
 AddPlayer: INVALID_INPUT
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	468238406
+and there are no more players!
 AddPlayer: FAILURE
 GetGroupsHighestLevel: INVALID_INPUT
 RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	148335651
+2	||	954447945
+and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: FAILURE
 AddPlayer: FAILURE

@@ -199,7 +199,9 @@ AddPlayer: SUCCESS
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1080598066
+and there are no more players!
 AddGroup: SUCCESS
 AddGroup: SUCCESS
 GetAllPlayersByLevel: INVALID_INPUT

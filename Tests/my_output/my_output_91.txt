@@ -413,16 +413,16 @@ ReplaceGroup: SUCCESS
 GetHighestLevel: FAILURE
 AddPlayer: SUCCESS
 GroupIndex	||	Player
-1	||	1229600863
-2	||	96825964
-3	||	1421952285
-4	||	1136989461
+1	||	1751077862
+2	||	1229600863
+3	||	96825964
+4	||	1421952285
 and there are no more players!
 ReplaceGroup: SUCCESS
 IncreaseLevel: FAILURE
 AddGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1229600863
+1	||	1751077862
 and there are no more players!
 RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
@@ -431,10 +431,10 @@ AddPlayer: SUCCESS
 AddPlayer: SUCCESS
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1229600863
-2	||	96825964
-3	||	1421952285
-4	||	154660176
+1	||	1751077862
+2	||	1229600863
+3	||	96825964
+4	||	1421952285
 and there are no more players!
 RemovePlayer: INVALID_INPUT
 IncreaseLevel: SUCCESS

@@ -280,7 +280,9 @@ IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
 ReplaceGroup: FAILURE
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	533164515
+and there are no more players!
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
 AddPlayer: SUCCESS

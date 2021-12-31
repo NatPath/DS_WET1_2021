@@ -199,7 +199,7 @@ AddPlayer: SUCCESS
 AddGroup: FAILURE
 ReplaceGroup: INVALID_INPUT
 GroupIndex	||	Player
-1	||	631277665
+1	||	728896912
 and there are no more players!
 RemovePlayer: INVALID_INPUT
 GetGroupsHighestLevel: INVALID_INPUT
@@ -487,18 +487,26 @@ AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddGroup: FAILURE
 ReplaceGroup: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1381072870
+and there are no more players!
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1381072870
+and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1381072870
+and there are no more players!
 AddGroup: SUCCESS
 GetAllPlayersByLevel: INVALID_INPUT
 IncreaseLevel: SUCCESS
 GetHighestLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1689457149
+and there are no more players!
 Rank	||	Player
 1	||	1689457149
 2	||	1381072870
@@ -571,6 +579,8 @@ ReplaceGroup: SUCCESS
 RemovePlayer: FAILURE
 AddPlayer: SUCCESS
 AddGroup: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	436731012
+and there are no more players!
 Highest level player is: 436731012
 Quit done.

@@ -159,7 +159,14 @@ RemovePlayer: SUCCESS
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 RemovePlayer: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1833265133
+2	||	146362354
+3	||	722389788
+4	||	2125398758
+5	||	1941171438
+6	||	296684947
+and there are no more players!
 AddPlayer: FAILURE
 RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS

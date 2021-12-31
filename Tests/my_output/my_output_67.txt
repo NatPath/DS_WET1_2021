@@ -331,7 +331,9 @@ Highest level player is: -1
 ReplaceGroup: SUCCESS
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1677207017
+and there are no more players!
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
 AddPlayer: FAILURE

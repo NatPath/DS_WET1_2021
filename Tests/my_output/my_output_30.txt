@@ -214,7 +214,10 @@ RemovePlayer: SUCCESS
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1469576883
+2	||	605222440
+and there are no more players!
 IncreaseLevel: SUCCESS
 AddGroup: FAILURE
 RemovePlayer: SUCCESS
@@ -236,14 +239,20 @@ AddGroup: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
 AddGroup: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1469576883
+and there are no more players!
 and there are no more players!
 Rank	||	Player
 1	||	1469576883
 2	||	2021349383
 and there are no more players!
-GetGroupsHighestLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1469576883
+and there are no more players!
+GroupIndex	||	Player
+1	||	1469576883
+and there are no more players!
 IncreaseLevel: SUCCESS
 AddPlayer: FAILURE
 AddGroup: SUCCESS
@@ -255,7 +264,7 @@ AddPlayer: SUCCESS
 ReplaceGroup: FAILURE
 AddGroup: SUCCESS
 GroupIndex	||	Player
-1	||	411290454
+1	||	1469576883
 and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: FAILURE

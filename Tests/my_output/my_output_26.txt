@@ -148,10 +148,10 @@ Rank	||	Player
 and there are no more players!
 AddPlayer: SUCCESS
 GroupIndex	||	Player
-1	||	1063329307
-2	||	2143559549
-3	||	809680559
-4	||	1354990033
+1	||	1603122753
+2	||	1063329307
+3	||	2143559549
+4	||	809680559
 and there are no more players!
 AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
@@ -323,7 +323,12 @@ IncreaseLevel: SUCCESS
 GetGroupsHighestLevel: INVALID_INPUT
 AddPlayer: SUCCESS
 RemovePlayer: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	206246952
+2	||	944794684
+3	||	878151658
+4	||	1031082955
+and there are no more players!
 RemovePlayer: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS

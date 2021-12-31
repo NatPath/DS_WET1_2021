@@ -80,7 +80,9 @@ ReplaceGroup: SUCCESS
 AddGroup: FAILURE
 RemovePlayer: SUCCESS
 RemovePlayer: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	705670827
+and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
 ReplaceGroup: INVALID_INPUT
@@ -129,7 +131,10 @@ Rank	||	Player
 and there are no more players!
 IncreaseLevel: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	705670827
+2	||	1046520321
+and there are no more players!
 AddGroup: SUCCESS
 IncreaseLevel: SUCCESS
 Rank	||	Player
@@ -467,7 +472,10 @@ IncreaseLevel: SUCCESS
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	564443930
+2	||	642045754
+and there are no more players!
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
 RemovePlayer: SUCCESS

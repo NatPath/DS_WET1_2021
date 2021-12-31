@@ -1,0 +1,2 @@
+for i in {1..14}; do ./OctopusGame.out < Tests/wet1_tests_segel/randtest$i.in > Tests/wet1_tests_segel/rand$i.out; done
+for i in {1..14};do diff Tests/wet1_tests_segel/randtest$i.out Tests/wet1_tests_segel/rand$i.out; done

@@ -189,7 +189,9 @@ AddPlayer: INVALID_INPUT
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1716035981
+and there are no more players!
 Highest level player is: -1
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
@@ -401,7 +403,7 @@ GroupIndex	||	Player
 and there are no more players!
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1635240725
+1	||	1737602280
 and there are no more players!
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS

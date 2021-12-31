@@ -61,7 +61,9 @@ Rank	||	Player
 5	||	350812757
 6	||	1527117916
 and there are no more players!
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1279916845
+and there are no more players!
 RemovePlayer: SUCCESS
 Rank	||	Player
 1	||	1279916845
@@ -71,7 +73,9 @@ Rank	||	Player
 5	||	1527117916
 and there are no more players!
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1279916845
+and there are no more players!
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 AddPlayer: INVALID_INPUT

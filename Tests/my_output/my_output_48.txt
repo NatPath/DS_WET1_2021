@@ -254,7 +254,7 @@ Rank	||	Player
 and there are no more players!
 AddGroup: INVALID_INPUT
 GroupIndex	||	Player
-1	||	1583042690
+1	||	861356666
 and there are no more players!
 RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS
@@ -412,7 +412,7 @@ AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	94755861
+1	||	362642757
 and there are no more players!
 AddGroup: SUCCESS
 Highest level player is: -1

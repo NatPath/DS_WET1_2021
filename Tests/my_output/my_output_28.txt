@@ -29,7 +29,7 @@ RemovePlayer: SUCCESS
 Highest level player is: 909319578
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	1179959516
+1	||	909319578
 and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
@@ -84,7 +84,11 @@ RemovePlayer: SUCCESS
 ReplaceGroup: INVALID_INPUT
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1179959516
+2	||	1884583989
+3	||	1511492157
+and there are no more players!
 AddGroup: SUCCESS
 RemovePlayer: SUCCESS
 RemovePlayer: SUCCESS
@@ -137,7 +141,11 @@ AddGroup: SUCCESS
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1256619650
+2	||	235918038
+3	||	1179959516
+and there are no more players!
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
 1	||	1256619650
@@ -190,7 +198,9 @@ AddGroup: FAILURE
 ReplaceGroup: SUCCESS
 AddPlayer: FAILURE
 Highest level player is: 1179959516
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1179959516
+and there are no more players!
 RemovePlayer: FAILURE
 AddGroup: SUCCESS
 AddGroup: SUCCESS
@@ -251,7 +261,11 @@ RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 RemovePlayer: SUCCESS
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	574879888
+2	||	1156416078
+3	||	1179959516
+and there are no more players!
 AddGroup: INVALID_INPUT
 Highest level player is: 1179959516
 ReplaceGroup: SUCCESS
@@ -354,7 +368,10 @@ AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 AddGroup: FAILURE
 AddPlayer: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1626485363
+2	||	529241487
+and there are no more players!
 RemovePlayer: SUCCESS
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS
@@ -368,7 +385,10 @@ ReplaceGroup: SUCCESS
 AddPlayer: FAILURE
 Highest level player is: 529241487
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1626485363
+2	||	529241487
+and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: SUCCESS
 AddGroup: FAILURE

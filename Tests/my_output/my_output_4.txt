@@ -297,7 +297,9 @@ Rank	||	Player
 and there are no more players!
 AddPlayer: INVALID_INPUT
 ReplaceGroup: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	984867004
+and there are no more players!
 Rank	||	Player
 1	||	984867004
 2	||	1132723687

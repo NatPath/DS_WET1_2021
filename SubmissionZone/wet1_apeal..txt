@@ -1,0 +1,3 @@
+in the file OctopusGame.cpp added line 255:
+if (found_node==nullptr){return StatusType::FAILURE;}
+

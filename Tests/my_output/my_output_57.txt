@@ -114,7 +114,13 @@ and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1374819973
+2	||	129861426
+3	||	920117156
+4	||	1719385806
+5	||	758488263
+and there are no more players!
 AddGroup: SUCCESS
 ReplaceGroup: FAILURE
 AddPlayer: SUCCESS
@@ -127,7 +133,14 @@ and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: INVALID_INPUT
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	129861426
+2	||	42516445
+3	||	1374819973
+4	||	586849189
+5	||	1719385806
+6	||	446354271
+and there are no more players!
 IncreaseLevel: FAILURE
 AddPlayer: SUCCESS
 ReplaceGroup: FAILURE
@@ -353,7 +366,7 @@ ReplaceGroup: SUCCESS
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 GroupIndex	||	Player
-1	||	490892414
+1	||	1722996921
 and there are no more players!
 IncreaseLevel: SUCCESS
 and there are no more players!

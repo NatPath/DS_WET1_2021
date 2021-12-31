@@ -35,7 +35,11 @@ AddPlayer: SUCCESS
 RemovePlayer: SUCCESS
 AddGroup: FAILURE
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2023470528
+2	||	524342119
+3	||	1806675422
+and there are no more players!
 ReplaceGroup: SUCCESS
 AddPlayer: INVALID_INPUT
 Highest level player is: -1
@@ -464,7 +468,12 @@ AddGroup: FAILURE
 RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	558939435
+2	||	238625857
+3	||	789259249
+4	||	1196912809
+and there are no more players!
 AddPlayer: INVALID_INPUT
 ReplaceGroup: SUCCESS
 RemovePlayer: SUCCESS

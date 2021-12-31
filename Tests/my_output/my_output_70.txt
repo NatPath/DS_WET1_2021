@@ -28,7 +28,11 @@ AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1128558710
+2	||	966001302
+3	||	1937444509
+and there are no more players!
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
 Rank	||	Player
@@ -37,9 +41,9 @@ and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
 GroupIndex	||	Player
-1	||	966001302
-2	||	635315046
-3	||	1937444509
+1	||	1128558710
+2	||	966001302
+3	||	635315046
 and there are no more players!
 IncreaseLevel: SUCCESS
 IncreaseLevel: SUCCESS

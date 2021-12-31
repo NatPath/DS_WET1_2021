@@ -95,14 +95,20 @@ RemovePlayer: SUCCESS
 IncreaseLevel: SUCCESS
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2047375797
+and there are no more players!
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
 GetHighestLevel: FAILURE
 AddPlayer: SUCCESS
 AddGroup: SUCCESS
 IncreaseLevel: FAILURE
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2047375797
+2	||	824681036
+3	||	1671390402
+and there are no more players!
 AddPlayer: SUCCESS
 GetGroupsHighestLevel: INVALID_INPUT
 Rank	||	Player
@@ -123,16 +129,27 @@ IncreaseLevel: INVALID_INPUT
 AddGroup: SUCCESS
 Highest level player is: -1
 AddGroup: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2047375797
+2	||	824681036
+3	||	53486233
+and there are no more players!
 IncreaseLevel: SUCCESS
 IncreaseLevel: INVALID_INPUT
 RemovePlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	2047375797
+2	||	53486233
+and there are no more players!
 IncreaseLevel: SUCCESS
 GetHighestLevel: FAILURE
 AddGroup: SUCCESS
 AddPlayer: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1990694819
+2	||	2047375797
+3	||	53486233
+and there are no more players!
 IncreaseLevel: FAILURE
 ReplaceGroup: INVALID_INPUT
 RemovePlayer: FAILURE
@@ -266,7 +283,14 @@ AddGroup: SUCCESS
 Rank	||	Player
 1	||	1179070190
 and there are no more players!
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1179070190
+2	||	875865556
+3	||	702726446
+4	||	1788195075
+5	||	228482460
+6	||	192122058
+and there are no more players!
 AddPlayer: SUCCESS
 IncreaseLevel: SUCCESS
 GetGroupsHighestLevel: INVALID_INPUT
@@ -284,7 +308,12 @@ AddGroup: SUCCESS
 AddPlayer: FAILURE
 ReplaceGroup: SUCCESS
 GetGroupsHighestLevel: INVALID_INPUT
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1179070190
+2	||	875865556
+3	||	228482460
+4	||	1593185381
+and there are no more players!
 IncreaseLevel: SUCCESS
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS
@@ -389,8 +418,8 @@ IncreaseLevel: SUCCESS
 GetGroupsHighestLevel: INVALID_INPUT
 AddGroup: SUCCESS
 GroupIndex	||	Player
-1	||	573118331
-2	||	228482460
+1	||	148948444
+2	||	573118331
 and there are no more players!
 ReplaceGroup: SUCCESS
 ReplaceGroup: SUCCESS

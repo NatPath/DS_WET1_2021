@@ -206,7 +206,13 @@ and there are no more players!
 GetGroupsHighestLevel: FAILURE
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	941915618
+2	||	1440524767
+3	||	1481179635
+4	||	1368564973
+5	||	2131292893
+and there are no more players!
 ReplaceGroup: SUCCESS
 Rank	||	Player
 1	||	1481179635
@@ -393,7 +399,9 @@ AddPlayer: SUCCESS
 AddGroup: SUCCESS
 ReplaceGroup: SUCCESS
 IncreaseLevel: SUCCESS
-GetGroupsHighestLevel: FAILURE
+GroupIndex	||	Player
+1	||	1745607072
+and there are no more players!
 AddPlayer: SUCCESS
 ReplaceGroup: FAILURE
 RemovePlayer: SUCCESS
